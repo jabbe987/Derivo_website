@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Droplets, Shield, Leaf } from "lucide-react";
+import logo from "@/assets/Logo.png";
 
 const HeroSection = () => {
   const highlights = [
@@ -19,6 +20,12 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <img
+            src={logo}
+            alt="Derivo logo"
+            className="h-24 md:h-32 lg:h-36 w-auto mx-auto mb-6 animate-fade-up"
+          />
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-2 mb-8 animate-fade-up">
             <Droplets className="w-4 h-4 text-accent" />

@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
+import logo from "@/assets/Logo.png";
 
 const Footer = () => {
   const quickLinks = [
@@ -24,10 +25,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-water-gradient rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-bold text-xl">D</span>
-              </div>
-              <span className="font-serif font-semibold text-xl">Derivo</span>
+              <img src={logo} alt="Derivo logo" className="h-10 w-auto" />
             </div>
             <p className="text-primary-foreground/70 leading-relaxed mb-6">
               VA-utredningar för ett hållbart och tryggt samhälle. Vi tar fram 

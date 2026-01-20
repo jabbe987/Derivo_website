@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/Logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,47 +34,42 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-water-gradient rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-serif font-bold text-xl">D</span>
-            </div>
-            <span className={`font-serif font-semibold text-xl transition-colors ${
-              isScrolled ? "text-foreground" : "text-primary-foreground"
-            }`}>
-              Derivo
-            </span>
+          <a href="#" className="flex items-center">
+            <img src={logo} alt="Derivo logo" className="h-10 w-auto" />
           </a>
+          <div className="flex items-center gap-4">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-accent ${
+                    isScrolled ? "text-foreground" : "text-primary-foreground/90"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <Button variant={isScrolled ? "default" : "hero"} size="lg">
+                Kontakta oss
+              </Button>
+            </nav>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
-                  isScrolled ? "text-foreground" : "text-primary-foreground/90"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-            <Button variant={isScrolled ? "default" : "hero"} size="lg">
-              Kontakta oss
-            </Button>
-          </nav>
+            {/* Mobile Menu Toggle */}
+            <button
+              className="md:hidden p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Oppna meny"
+            >
+              {isMobileMenuOpen ? (
+                <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+              ) : (
+                <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+              )}
+            </button>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Öppna meny"
-          >
-            {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
-            ) : (
-              <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
-            )}
-          </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
