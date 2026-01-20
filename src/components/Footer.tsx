@@ -1,25 +1,20 @@
-import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
-    { label: "About Us", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Our Team", href: "#team" },
-    { label: "Contact", href: "#contact" },
+    { label: "Om oss", href: "#om-oss" },
+    { label: "Tjänster", href: "#tjanster" },
+    { label: "Värderingar", href: "#varderingar" },
+    { label: "Team", href: "#team" },
+    { label: "Kontakt", href: "#kontakt" },
   ];
 
   const services = [
-    "Business Strategy",
-    "Financial Advisory",
-    "Risk Management",
-    "Innovation Consulting",
-  ];
-
-  const socials = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    "Dagvattenutredningar",
+    "Hydraulisk modellering",
+    "Skyfallsanalyser",
+    "Föroreningsberäkningar",
+    "3D-projektering",
   ];
 
   return (
@@ -29,33 +24,30 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gold-gradient rounded-lg flex items-center justify-center">
-                <span className="text-primary font-serif font-bold text-xl">A</span>
+              <div className="w-10 h-10 bg-water-gradient rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-serif font-bold text-xl">D</span>
               </div>
-              <span className="font-serif font-semibold text-xl">Apex Corp</span>
+              <span className="font-serif font-semibold text-xl">Derivo</span>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed mb-6">
-              Empowering businesses with strategic solutions and expert guidance 
-              for over two decades.
+              VA-utredningar för ett hållbart och tryggt samhälle. Vi tar fram 
+              åtgärder och lösningar med syfte.
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-primary transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a
+                href="#"
+                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-6">Quick Links</h4>
+            <h4 className="font-serif font-semibold text-lg mb-6">Snabblänkar</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -72,7 +64,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-6">Our Services</h4>
+            <h4 className="font-serif font-semibold text-lg mb-6">Tjänster</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
@@ -82,21 +74,38 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-6">Stay Updated</h4>
-            <p className="text-primary-foreground/70 mb-4">
-              Subscribe to our newsletter for insights and updates.
-            </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-4 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-lg text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-accent"
-              />
-              <button className="px-4 py-2 bg-gold-gradient text-primary font-semibold rounded-lg hover:opacity-90 transition-opacity">
-                Subscribe
-              </button>
+            <h4 className="font-serif font-semibold text-lg mb-6">Kontakt</h4>
+            <div className="space-y-4">
+              <a
+                href="mailto:filip@derivo.se"
+                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                <span className="text-sm">filip@derivo.se</span>
+              </a>
+              <a
+                href="tel:+46769002104"
+                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">+46 76 900 21 04</span>
+              </a>
+              <a
+                href="mailto:anton@derivo.se"
+                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                <span className="text-sm">anton@derivo.se</span>
+              </a>
+              <a
+                href="tel:+46704612888"
+                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">+46 70 461 28 88</span>
+              </a>
             </div>
           </div>
         </div>
@@ -104,14 +113,11 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} Apex Corp. All rights reserved.
+            © {new Date().getFullYear()} Derivo AB. Alla rättigheter förbehållna.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-primary-foreground/60 text-sm hover:text-accent transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-primary-foreground/60 text-sm hover:text-accent transition-colors">
-              Terms of Service
+              Integritetspolicy
             </a>
           </div>
         </div>

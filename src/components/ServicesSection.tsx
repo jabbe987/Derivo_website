@@ -1,53 +1,53 @@
-import { Briefcase, BarChart3, Shield, Lightbulb, Scale, Globe } from "lucide-react";
+import { Droplets, BarChart3, CloudRain, Filter, Layers, Database } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: Briefcase,
-      title: "Business Strategy",
-      description: "Comprehensive strategic planning and execution frameworks to drive sustainable growth and competitive advantage.",
+      icon: Droplets,
+      title: "Dagvattenutredningar",
+      description: "Omfattande utredningar för detaljplaner med fokus på fördröjning, rening och avledning av dagvatten.",
     },
     {
       icon: BarChart3,
-      title: "Financial Advisory",
-      description: "Expert financial guidance including M&A, capital raising, restructuring, and investment optimization.",
+      title: "Hydraulisk modellering",
+      description: "Expertis inom SWMM och kapacitetsanalyser för att simulera och optimera dagvattensystem.",
     },
     {
-      icon: Shield,
-      title: "Risk Management",
-      description: "Proactive risk assessment and mitigation strategies to protect your business and ensure compliance.",
+      icon: CloudRain,
+      title: "Skyfallsanalyser",
+      description: "Riskbedömningar och åtgärdsförslag för att hantera extrema nederbördshändelser och minska översvämningsrisker.",
     },
     {
-      icon: Lightbulb,
-      title: "Innovation Consulting",
-      description: "Transform your business with cutting-edge solutions, digital transformation, and process innovation.",
+      icon: Filter,
+      title: "Föroreningsberäkningar",
+      description: "Beräkningar i StormTac för att bedöma föroreningsbelastning och utforma reningslösningar.",
     },
     {
-      icon: Scale,
-      title: "Legal Advisory",
-      description: "Strategic legal counsel for corporate governance, contracts, intellectual property, and regulatory matters.",
+      icon: Layers,
+      title: "3D-projektering",
+      description: "Teknisk projektering i Civil 3D för att visualisera och designa VA-lösningar med precision.",
     },
     {
-      icon: Globe,
-      title: "Global Expansion",
-      description: "Navigate international markets with our expertise in cross-border operations, market entry, and localization.",
+      icon: Database,
+      title: "Systemlösningar",
+      description: "Framtagning av helhetslösningar för dagvattenhantering anpassade efter platsens unika förutsättningar.",
     },
   ];
 
   return (
-    <section id="services" className="py-24 bg-muted/30">
+    <section id="tjanster" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Our Services
+            Våra Tjänster
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Comprehensive Solutions for Modern Enterprises
+            Modellering, projektering och utredningar inom vatten
           </h2>
           <p className="text-muted-foreground text-lg">
-            We offer a full spectrum of professional services designed to address 
-            your most critical business challenges and unlock new opportunities.
+            Vi erbjuder ett brett spektrum av tekniska tjänster inom VA och dagvatten, 
+            alltid med fokus på praktisk nytta och hållbara lösningar.
           </p>
         </div>
 
@@ -60,8 +60,8 @@ const ServicesSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold-gradient transition-all duration-300">
-                <service.icon className="w-8 h-8 text-primary group-hover:text-primary transition-colors" />
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-water-gradient transition-all duration-300">
+                <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
 
               {/* Content */}
@@ -71,15 +71,6 @@ const ServicesSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
-
-              {/* Learn More Link */}
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 text-accent font-medium mt-6 group-hover:gap-3 transition-all duration-200"
-              >
-                Learn More
-                <span className="text-lg">→</span>
-              </a>
             </div>
           ))}
         </div>
