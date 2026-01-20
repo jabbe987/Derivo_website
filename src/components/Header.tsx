@@ -20,7 +20,6 @@ const Header = () => {
     { label: "Tjänster", href: "#tjanster" },
     { label: "Värderingar", href: "#varderingar" },
     { label: "Team", href: "#team" },
-    { label: "Kontakt", href: "#kontakt" },
   ];
 
   return (
@@ -51,8 +50,8 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant={isScrolled ? "default" : "hero"} size="lg">
-                Kontakta oss
+              <Button variant={isScrolled ? "default" : "hero"} size="lg" asChild>
+                <a href="#kontakt">Kontakta oss</a>
               </Button>
             </nav>
 
@@ -86,8 +85,8 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="default" size="lg" className="mt-2">
-                Kontakta oss
+              <Button variant="default" size="lg" className="mt-2" asChild>
+                <a href="#kontakt">Kontakta oss</a>
               </Button>
             </nav>
           </div>
