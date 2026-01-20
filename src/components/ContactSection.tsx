@@ -2,15 +2,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
-  email: z.string().trim().email("Please enter a valid email").max(255, "Email is too long"),
-  company: z.string().trim().max(100, "Company name is too long").optional(),
-  message: z.string().trim().min(1, "Message is required").max(1000, "Message is too long"),
+  name: z.string().trim().min(1, "Namn är obligatoriskt").max(100, "Namnet är för långt"),
+  email: z.string().trim().email("Ange en giltig e-postadress").max(255, "E-postadressen är för lång"),
+  phone: z.string().trim().max(20, "Telefonnumret är för långt").optional(),
+  subject: z.string().trim().max(100, "Ämnet är för långt").optional(),
+  message: z.string().trim().min(1, "Meddelande är obligatoriskt").max(2000, "Meddelandet är för långt"),
 });
 
 const ContactSection = () => {
@@ -18,7 +19,8 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
+    phone: "",
+    subject: "",
     message: "",
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -27,7 +29,6 @@ const ContactSection = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -38,17 +39,16 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const validatedData = contactSchema.parse(formData);
+      contactSchema.parse(formData);
       
-      // Simulate form submission
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       toast({
-        title: "Message Sent Successfully!",
-        description: "We'll get back to you within 24 hours.",
+        title: "Meddelande skickat!",
+        description: "Vi återkommer så snart vi kan.",
       });
       
-      setFormData({ name: "", email: "", company: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
       setErrors({});
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -65,53 +65,61 @@ const ContactSection = () => {
     }
   };
 
-  const contactInfo = [
-    { icon: MapPin, label: "Address", value: "123 Business Avenue, Suite 500\nNew York, NY 10001" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-    { icon: Mail, label: "Email", value: "contact@apexcorp.com" },
-    { icon: Clock, label: "Hours", value: "Mon - Fri: 9:00 AM - 6:00 PM" },
+  const contacts = [
+    {
+      name: "Filip Österlund",
+      role: "VA-utredare / Grundare",
+      email: "filip@derivo.se",
+      phone: "+46 76 900 21 04",
+    },
+    {
+      name: "Anton Nilsson",
+      role: "Affärsutveckling / Grundare",
+      email: "anton@derivo.se",
+      phone: "+46 70 461 28 88",
+    },
   ];
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
+    <section id="kontakt" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Contact Us
+            Kontakta oss
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Let's Start a Conversation
+            Låt oss starta en dialog
           </h2>
           <p className="text-muted-foreground text-lg">
-            Ready to take your business to the next level? Get in touch with our team 
-            and let's discuss how we can help you achieve your goals.
+            Har du frågor, behöver stöd i ett projekt eller vill diskutera en möjlig 
+            uppdragsförfrågan? Vi hjälper gärna till.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="bg-card rounded-2xl shadow-card p-8 lg:p-10">
-            <h3 className="font-serif text-2xl text-foreground mb-6">Send Us a Message</h3>
+            <h3 className="font-serif text-2xl text-foreground mb-6">Skicka ett meddelande</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Full Name *
+                    Namn *
                   </label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Smith"
+                    placeholder="Ditt namn"
                     className={errors.name ? "border-destructive" : ""}
                   />
                   {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address *
+                    E-post *
                   </label>
                   <Input
                     id="email"
@@ -119,36 +127,50 @@ const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@company.com"
+                    placeholder="din@epost.se"
                     className={errors.email ? "border-destructive" : ""}
                   />
                   {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                  Company Name
-                </label>
-                <Input
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Your Company Inc."
-                />
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                    Telefon (valfritt)
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+46 70 123 45 67"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    Ämne (valfritt)
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Vad gäller det?"
+                  />
+                </div>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message *
+                  Meddelande *
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your project or inquiry..."
+                  placeholder="Beskriv ditt projekt eller din fråga..."
                   rows={5}
                   className={errors.message ? "border-destructive" : ""}
                 />
@@ -157,10 +179,10 @@ const ContactSection = () => {
 
               <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? (
-                  "Sending..."
+                  "Skickar..."
                 ) : (
                   <>
-                    Send Message
+                    Skicka meddelande
                     <Send className="w-4 h-4" />
                   </>
                 )}
@@ -171,40 +193,50 @@ const ContactSection = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="font-serif text-2xl text-foreground mb-6">Get in Touch</h3>
+              <h3 className="font-serif text-2xl text-foreground mb-4">Kontakta oss direkt</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Our team is ready to assist you with any questions or inquiries. 
-                Whether you're looking for a consultation or have a specific project in mind, 
-                we're here to help.
+                Vårt team är redo att hjälpa dig med frågor eller förfrågningar. 
+                Oavsett om du söker en konsultation eller har ett specifikt projekt i åtanke, 
+                finns vi här för dig.
               </p>
             </div>
 
             <div className="space-y-6">
-              {contactInfo.map((item) => (
-                <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
-                    <item.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground mb-1">{item.label}</p>
-                    <p className="text-muted-foreground whitespace-pre-line">{item.value}</p>
+              {contacts.map((contact) => (
+                <div key={contact.name} className="bg-muted/50 rounded-xl p-6">
+                  <h4 className="font-serif text-lg text-foreground font-semibold mb-1">
+                    {contact.name}
+                  </h4>
+                  <p className="text-accent text-sm font-medium mb-4">{contact.role}</p>
+                  <div className="space-y-2">
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span className="text-sm">{contact.email}</span>
+                    </a>
+                    <a
+                      href={`tel:${contact.phone.replace(/\s/g, '')}`}
+                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span className="text-sm">{contact.phone}</span>
+                    </a>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Map Placeholder */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow-soft h-64">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596073366!2d-74.25987368715491!3d40.69714941680757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1635959481000!5m2!1sen!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Office Location"
-              />
+            {/* Location */}
+            <div className="flex items-start gap-4 p-6 bg-card rounded-xl shadow-soft">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                <MapPin className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <p className="font-medium text-foreground mb-1">Plats</p>
+                <p className="text-muted-foreground">Västerås, Sverige</p>
+              </div>
             </div>
           </div>
         </div>

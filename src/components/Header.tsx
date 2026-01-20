@@ -15,10 +15,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
+    { label: "Om oss", href: "#om-oss" },
+    { label: "Tjänster", href: "#tjanster" },
+    { label: "Värderingar", href: "#varderingar" },
     { label: "Team", href: "#team" },
-    { label: "Contact", href: "#contact" },
+    { label: "Kontakt", href: "#kontakt" },
   ];
 
   return (
@@ -33,13 +34,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gold-gradient rounded-lg flex items-center justify-center">
-              <span className="text-primary font-serif font-bold text-xl">A</span>
+            <div className="w-10 h-10 bg-water-gradient rounded-lg flex items-center justify-center">
+              <span className="text-primary-foreground font-serif font-bold text-xl">D</span>
             </div>
             <span className={`font-serif font-semibold text-xl transition-colors ${
               isScrolled ? "text-foreground" : "text-primary-foreground"
             }`}>
-              Apex Corp
+              Derivo
             </span>
           </a>
 
@@ -57,7 +58,7 @@ const Header = () => {
               </a>
             ))}
             <Button variant={isScrolled ? "default" : "hero"} size="lg">
-              Get Started
+              Kontakta oss
             </Button>
           </nav>
 
@@ -65,7 +66,7 @@ const Header = () => {
           <button
             className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Öppna meny"
           >
             {isMobileMenuOpen ? (
               <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
@@ -90,7 +91,7 @@ const Header = () => {
                 </a>
               ))}
               <Button variant="default" size="lg" className="mt-2">
-                Get Started
+                Kontakta oss
               </Button>
             </nav>
           </div>

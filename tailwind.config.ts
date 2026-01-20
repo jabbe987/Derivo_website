@@ -60,7 +60,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        serif: ['DM Serif Display', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
