@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Droplets, Shield, Leaf } from "lucide-react";
-import logo from "@/assets/Logo.png";
 
 const HeroSection = () => {
   const highlights = [
@@ -11,28 +10,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen bg-hero flex items-center overflow-hidden">
-      {/* White top band up to just under the logo */}
-      <div className="absolute inset-x-0 top-0 h-[300px] md:h-[320px] lg:h-[506px] bg-background z-0" />
-
       {/* Background Pattern */}
-      <div className="absolute inset-x-0 bottom-0 top-[300px] md:top-[320px] lg:top-[340px] opacity-20 z-0">
-        <div className="absolute top-12 left-10 w-72 h-72 bg-accent/30 rounded-full blur-3xl animate-wave" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/30 rounded-full blur-3xl animate-wave" />
         <div className="absolute bottom-40 right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-wave" style={{ animationDelay: "-4s" }} />
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/25 rounded-full blur-3xl animate-wave" style={{ animationDelay: "-2s" }} />
       </div>
 
-      <div className="container mx-auto px-6 pt-16 pb-32 relative z-10">
+      <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <img
-            src={logo}
-            alt="Derivo logo"
-            className="h-24 md:h-32 lg:h-36 w-auto mx-auto mb-6 animate-fade-up"
-          />
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-4 py-2 mb-8 animate-fade-up">
             <Droplets className="w-4 h-4 text-accent" />
-            <span className="text-foreground/90 text-sm font-medium">
+            <span className="text-primary-foreground/90 text-sm font-medium">
               Konsulter inom VA & dagvatten
             </span>
           </div>
