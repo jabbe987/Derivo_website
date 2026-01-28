@@ -90,7 +90,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="font-medium text-foreground mb-1">Plats</p>
-                <p className="text-muted-foreground">Västerås, Sverige</p>
+                <p className="text-muted-foreground">Herrgårdsgatan 4b, Västerås, Sverige</p>
               </div>
             </div>
           </div>

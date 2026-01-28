@@ -1,4 +1,4 @@
-const AboutSection = () => {
+﻿const AboutSection = () => {
   return (
     <section id="om-oss" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -21,6 +21,10 @@ const AboutSection = () => {
               Genom att kombinera teknisk kompetens med förståelse för lokala förutsättningar
               skapar vi lösningar som är anpassade, effektiva och långsiktigt hållbara. Vårt
               syfte är att stärka tryggheten och kvaliteten i samhällsplaneringen.
+            </p>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+              Derivo samarbetar med etablerade aktörer i branschen och kan vid behov ta in
+              kompletterande specialistkompetens.
             </p>
 
             {/* Mission Statement */}
