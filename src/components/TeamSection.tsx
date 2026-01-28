@@ -13,7 +13,7 @@ const TeamSection = () => {
     },
     {
       name: "Anton Nilsson",
-      role: "Medgrundare & Affärsutveckling",
+      role: "Medgrundare & Affärsutvecklare",
       email: "anton@derivo.se",
       phone: "+46 70 461 28 88",
       linkedin: "https://www.linkedin.com/in/anton-nilsson-069a431a1/",
