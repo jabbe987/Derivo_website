@@ -20,12 +20,12 @@ const ServicesSection = () => {
     {
       icon: Filter,
       title: "Föroreningsberäkningar",
-      description: "Beräkningar i StormTac för att bedöma föroreningsbelastning och utforma reningslösningar.",
+      description: "Beräkningar för att bedöma föroreningsbelastning och utforma reningslösningar.",
     },
     {
       icon: Layers,
       title: "3D-projektering",
-      description: "Teknisk projektering i Civil 3D för att visualisera och designa VA-lösningar med precision.",
+      description: "Teknisk projektering i Civil 3D för att visualisera och designa VA-lösningar.",
     },
     {
       icon: Database,

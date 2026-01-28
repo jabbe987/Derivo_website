@@ -44,13 +44,13 @@ const Header = () => {
                   key={link.label}
                   href={link.href}
                   className={`text-sm font-medium transition-colors hover:text-accent ${
-                    isScrolled ? "text-foreground" : "text-primary-foreground/90"
+                    isScrolled ? "text-foreground" : "text-foreground/90"
                   }`}
                 >
                   {link.label}
                 </a>
               ))}
-              <Button variant={isScrolled ? "default" : "hero"} size="lg" asChild>
+              <Button variant={isScrolled ? "default" : "default"} size="lg" asChild>
                 <a href="#kontakt">Kontakta oss</a>
               </Button>
             </nav>
@@ -62,9 +62,9 @@ const Header = () => {
               aria-label="Oppna meny"
             >
               {isMobileMenuOpen ? (
-                <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+                <X className={isScrolled ? "text-foreground" : "text-foreground"} />
               ) : (
-                <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+                <Menu className={isScrolled ? "text-foreground" : "text-foreground"} />
               )}
             </button>
 

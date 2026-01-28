@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import logo from "@/assets/Logo.png";
 
 const Footer = () => {
@@ -31,16 +31,6 @@ const Footer = () => {
               VA-utredningar för ett hållbart och tryggt samhälle. Vi tar fram 
               åtgärder och lösningar med syfte.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}

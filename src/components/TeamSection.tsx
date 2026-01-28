@@ -7,16 +7,18 @@ const TeamSection = () => {
       role: "Medgrundare & VA-utredare",
       email: "filip@derivo.se",
       phone: "+46 76 900 21 04",
+      linkedin: "https://www.linkedin.com/in/filip-%C3%B6sterlund-a1925b251/",
       bio: "Filip är vatteningenjör med fokus på dagvatten, hydraulisk modellering och tekniska utredningar. Han tar fram underlag och lösningar för fördröjning, rening och skyfall, och arbetar ofta nära beställare från tidig analys till färdig leverans. Bakgrunden i Försvarsmakten som stridsbåtschef och amfibiedykare har gett honom ett tydligt säkerhetsfokus, struktur och vana att fatta beslut i komplexa situationer.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "",
     },
     {
       name: "Anton Nilsson",
       role: "Medgrundare & Affärsutveckling",
       email: "anton@derivo.se",
       phone: "+46 70 461 28 88",
+      linkedin: "https://www.linkedin.com/in/anton-nilsson-069a431a1/",
       bio: "Anton är utbildad stadsplanerare med erfarenhet av platsutveckling och affärsutveckling. I Derivo arbetar han främst med administration, affärsutveckling och strategiska frågor – med fokus på att bygga struktur, skapa långsiktiga kundrelationer och utveckla bolagets erbjudande.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: "",
     },
   ];
 
@@ -32,8 +34,8 @@ const TeamSection = () => {
             Personerna bakom Derivo
           </h2>
           <p className="text-muted-foreground text-lg">
-            Tillsammans driver Filip och Anton Derivo AB. Filip är i första hand 
-            uppdragsansvarig och utför tekniska utredningar, medan Anton ansvarar 
+            Tillsammans driver Filip och Anton Derivo AB. Filip är i första hand
+            uppdragsansvarig och utför tekniska utredningar, medan Anton ansvarar
             för affärsutveckling och bolagsstruktur.
           </p>
         </div>
@@ -48,11 +50,39 @@ const TeamSection = () => {
             >
               {/* Photo */}
               <div className="relative h-64 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-muted via-muted/70 to-muted-foreground/20 flex items-center justify-center">
+                    <svg
+                      width="180"
+                      height="180"
+                      viewBox="0 0 180 180"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="opacity-70"
+                      aria-hidden="true"
+                    >
+                      <circle cx="90" cy="90" r="54" stroke="currentColor" strokeWidth="2" className="text-accent/40" />
+                      <circle cx="90" cy="78" r="18" fill="currentColor" className="text-accent/30">
+                        <animate attributeName="cy" values="74;82;74" dur="4s" repeatCount="indefinite" />
+                      </circle>
+                      <path
+                        d="M54 132C58 110 74 100 90 100C106 100 122 110 126 132"
+                        stroke="currentColor"
+                        strokeWidth="6"
+                        strokeLinecap="round"
+                        className="text-accent/35"
+                      >
+                        <animate attributeName="d" dur="4s" repeatCount="indefinite" values="M54 132C58 110 74 100 90 100C106 100 122 110 126 132;M54 130C58 112 74 102 90 102C106 102 122 112 126 130;M54 132C58 110 74 100 90 100C106 100 122 110 126 132" />
+                      </path>
+                    </svg>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6">
                   <h3 className="font-serif text-2xl text-primary-foreground font-semibold">
@@ -78,11 +108,30 @@ const TeamSection = () => {
                     <span className="text-sm">{member.email}</span>
                   </a>
                   <a
-                    href={`tel:${member.phone.replace(/\s/g, '')}`}
+                    href={`tel:${member.phone.replace(/\s/g, "")}`}
                     className="flex items-center gap-3 text-foreground hover:text-accent transition-colors"
                   >
                     <Phone className="w-4 h-4 text-accent" />
                     <span className="text-sm">{member.phone}</span>
+                  </a>
+                  <a
+                    href={member.linkedin || "#"}
+                    onClick={(e) => {
+                      if (!member.linkedin) {
+                        e.preventDefault();
+                      }
+                    }}
+                    className={`flex items-center gap-3 text-foreground hover:text-accent transition-colors ${
+                      member.linkedin ? "" : "opacity-60 cursor-not-allowed"
+                    }`}
+                    aria-label={`${member.name} LinkedIn`}
+                    aria-disabled={!member.linkedin}
+                    title={member.linkedin ? "LinkedIn" : "LinkedIn (kommer snart)"}
+                    target={member.linkedin ? "_blank" : undefined}
+                    rel={member.linkedin ? "noopener noreferrer" : undefined}
+                  >
+                    <Linkedin className="w-4 h-4 text-accent" />
+                    <span className="text-sm">LinkedIn</span>
                   </a>
                 </div>
               </div>
@@ -94,10 +143,10 @@ const TeamSection = () => {
         <div className="mt-16 max-w-3xl mx-auto text-center">
           <h3 className="font-serif text-2xl text-foreground mb-4">Vår berättelse</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Derivos grundare Anton och Filip är barndomsvänner från Västerås och lärde 
-            känna varandra genom fotbollen. Under större delen av deras vuxna liv har de 
-            bott på olika ställen i landet och det var först när Filip flyttade tillbaka 
-            till Västerås efter sina studier i Lund som planerna om att starta företag 
+            Derivos grundare Anton och Filip är barndomsvänner från Västerås och lärde
+            känna varandra genom fotbollen. Under större delen av deras vuxna liv har de
+            bott på olika ställen i landet och det var först när Filip flyttade tillbaka
+            till Västerås efter sina studier i Lund som planerna om att starta företag
             började ta form.
           </p>
         </div>
