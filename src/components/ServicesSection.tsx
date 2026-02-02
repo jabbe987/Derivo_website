@@ -10,7 +10,7 @@ const ServicesSection = () => {
     {
       icon: BarChart3,
       title: "Hydraulisk modellering",
-      description: "Expertis inom SWMM och kapacitetsanalyser för att simulera och optimera dagvattensystem.",
+      description: "Expertis inom kapacitetsanalyser för att simulera, förstå och optimera VA-system.",
     },
     {
       icon: CloudRain,

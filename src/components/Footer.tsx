@@ -28,8 +28,7 @@ const Footer = () => {
               <img src={logo} alt="Derivo logo" className="h-10 w-auto" />
             </div>
             <p className="text-primary-foreground/70 leading-relaxed mb-6">
-              VA-utredningar för ett hållbart och tryggt samhälle. Vi tar fram 
-              åtgärder och lösningar med syfte.
+              Underlag för bättre beslut.
             </p>
           </div>
 
@@ -65,35 +64,50 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-serif font-semibold text-lg mb-6">Kontakt</h4>
-            <div className="space-y-4">
-              <a
-                href="mailto:filip@derivo.se"
-                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                <span className="text-sm">filip@derivo.se</span>
-              </a>
-              <a
-                href="tel:+46769002104"
-                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">+46 76 900 21 04</span>
-              </a>
-              <a
-                href="mailto:anton@derivo.se"
-                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                <span className="text-sm">anton@derivo.se</span>
-              </a>
-              <a
-                href="tel:+46704612888"
-                className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">+46 70 461 28 88</span>
-              </a>
+            <div className="space-y-5">
+              <div>
+                <a
+                  href="mailto:info@derivo.se"
+                  className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span className="text-sm">info@derivo.se</span>
+                </a>
+              </div>
+              <div>
+                <p className="text-primary-foreground font-semibold text-sm mb-2">Filip Österlund</p>
+                <a
+                  href="mailto:filip@derivo.se"
+                  className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span className="text-sm">filip@derivo.se</span>
+                </a>
+                <a
+                  href="tel:+46769002104"
+                  className="mt-2 flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm">+46 76 900 21 04</span>
+                </a>
+              </div>
+              <div>
+                <p className="text-primary-foreground font-semibold text-sm mb-2">Anton Nilsson</p>
+                <a
+                  href="mailto:anton@derivo.se"
+                  className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span className="text-sm">anton@derivo.se</span>
+                </a>
+                <a
+                  href="tel:+46704612888"
+                  className="mt-2 flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm">+46 70 461 28 88</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -5,8 +5,8 @@ const ValuesSection = () => {
     {
       icon: Target,
       number: "01",
-      title: "Praktisk nytta",
-      description: "Vi skapar lösningar som fungerar i verkligheten och hjälper er att planera och prioritera rätt åtgärder.",
+      title: "Mervärde och praktisk nytta",
+      description: "Vi tar fram lösningar anpassade för verkligheten och hjälper er att planera och prioritera åtgärder med fokus på att skapa mervärde lokalt.",
     },
     {
       icon: Eye,

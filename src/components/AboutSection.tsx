@@ -9,22 +9,24 @@
               Om Derivo
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
-              Lösningar som fungerar i praktiken
+              Beslutsunderlag anpassade för dig och samhället
             </h2>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              Derivo AB skapar värde för både offentliga och privata beställare genom tekniska
-              utredningar och lösningar som utgår från verkliga behov och lokala förutsättningar.
-              Vi arbetar för en mer hållbar, trygg och framtidssäker samhällsplanering – där
-              kvalitet, tydlighet och rätt syfte alltid står i centrum.
+              Derivo hjälper både offentliga och privata beställare med tekniska underlag inom VA 
+              och samhällsbyggnad. Vi utgår från faktiska behov och lokala förutsättningar och 
+              kombinerar teknisk kompetens med förståelse för platsens sammanhang. Ambitionen är att 
+              stärka kvalitet, tydlighet och trygghet i planering och genomförande.
             </p>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Genom att kombinera teknisk kompetens med förståelse för lokala förutsättningar
-              skapar vi lösningar som är anpassade, effektiva och långsiktigt hållbara. Vårt
-              syfte är att stärka tryggheten och kvaliteten i samhällsplaneringen.
+              Som mindre konsultbolag kan vi arbeta nära beställaren och anpassa arbetssättet när 
+              förutsättningarna förändras. Vi eftersträvar väl avvägda vägval både ur ett ekonomiskt 
+              och tekniskt perspektiv – med hänsyn till berörda intressen.
             </p>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Derivo samarbetar med etablerade aktörer i branschen och kan vid behov ta in
-              kompletterande specialistkompetens.
+              Vårt mål är att leverera beslutsunderlag och lösningar som bidrar till smartare och mer 
+              hållbara samhällen – där kunden får stöd att fatta välgrundade beslut i både tidiga och 
+              sena skeden. Vi samarbetar även med etablerade aktörer i branschen och kan vid behov ta 
+              in kompletterande specialistkompetens.
             </p>
 
             {/* Mission Statement */}

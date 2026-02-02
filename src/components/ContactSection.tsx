@@ -48,6 +48,22 @@ const ContactSection = () => {
             </div>
 
             <div className="space-y-6">
+              <div className="bg-muted/50 rounded-xl p-6">
+                <h4 className="font-serif text-lg text-foreground font-semibold mb-1">
+                  Förfrågningar
+                </h4>
+                <p className="text-accent text-sm font-medium mb-4">Maila oss här</p>
+                <p className="text-muted-foreground text-sm mb-4">
+                  För nya uppdrag, frågor och förfrågningar.
+                </p>
+                <a
+                  href="mailto:info@derivo.se"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span className="text-sm">info@derivo.se</span>
+                </a>
+              </div>
               {contacts.map((contact) => (
                 <div key={contact.name} className="bg-muted/50 rounded-xl p-6">
                   <h4 className="font-serif text-lg text-foreground font-semibold mb-1">

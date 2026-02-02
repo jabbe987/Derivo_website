@@ -20,6 +20,15 @@ const TeamSection = () => {
       bio: "Anton är utbildad stadsplanerare med erfarenhet av platsutveckling och affärsutveckling. I Derivo arbetar han främst med administration, affärsutveckling och strategiska frågor – med fokus på att bygga struktur, skapa långsiktiga kundrelationer och utveckla bolagets erbjudande.",
       image: "",
     },
+    {
+      name: "Jakob Österlund",
+      role: "IT ansvarig",
+      email: "jakob@derivo.se",
+      phone: "+46 73 980 74 02",
+      linkedin: "https://www.linkedin.com/in/jakob-%C3%B6sterlund-0a49902b0/",
+      bio: "Jakob är civilingenjörsstudent i Informationsteknologi med inriktning inom mjukvaruutveckling. Han driver förbättringar inom system, webb och digitala arbetsflöden och bidrar med teknisk problemlösning, struktur och ett lugnt, ansvarstagande arbetssätt.",
+      image: "",
+    },
   ];
 
   return (
@@ -41,7 +50,7 @@ const TeamSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {team.map((member, index) => (
             <div
               key={member.name}
@@ -143,7 +152,7 @@ const TeamSection = () => {
         <div className="mt-16 max-w-3xl mx-auto text-center">
           <h3 className="font-serif text-2xl text-foreground mb-4">Vår berättelse</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Derivos grundare Anton och Filip är barndomsvänner från Västerås och lärde
+            Derivos grundare Filip och Anton är barndomsvänner från Västerås och lärde
             känna varandra genom fotbollen. Under större delen av deras vuxna liv har de
             bott på olika ställen i landet och det var först när Filip flyttade tillbaka
             till Västerås efter sina studier i Lund som planerna om att starta företag

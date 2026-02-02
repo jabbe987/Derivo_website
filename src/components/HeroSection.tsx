@@ -29,16 +29,15 @@ const HeroSection = () => {
 
           {/* Main Heading */}
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary-foreground mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            VA-utredningar för ett{" "}
-            <span className="italic">hållbart</span> och{" "}
-            <span className="italic">tryggt</span> samhälle
+            Underlag för bättre beslut
           </h1>
 
           {/* Subheading */}
           <p className="text-primary-foreground/85 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Derivo är ett mindre konsultbolag som arbetar med analyser och utredningar inom VA. 
-            Vi vill bidra till lösningar som fungerar i praktiken och som stödjer en långsiktigt 
-            hållbar utveckling av både nya och befintliga miljöer.
+            Derivo är ett mindre konsultbolag som arbetar med utredning, analys och projektering inom VA.
+            Vi tar fram underlag som hjälper beställare att bedöma förutsättningar, jämföra alternativ och 
+            fatta beslut i rätt skede. Som mindre aktör kan vi arbeta i nära dialog med dig som beställare 
+            och snabbt anpassa vårt arbetssätt när förutsättningarna förändras.
           </p>
 
           {/* CTA Buttons */}
