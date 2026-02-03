@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Droplets, Shield, Leaf } from "lucide-react";
+import { ArrowRight, Shield, Brain, Leaf, Droplets} from "lucide-react";
 
 const HeroSection = () => {
   const highlights = [
-    { icon: Droplets, text: "VA-utredningar" },
-    { icon: Shield, text: "Dagvattenhantering" },
-    { icon: Leaf, text: "Hållbara lösningar" },
+    { icon: Shield, text: "Trygga beslutsunderlag" },
+    { icon: Brain, text: "Smarta systemval" },
+    { icon: Leaf, text: "Hållbar dimensionering" },
   ];
 
   return (
@@ -79,3 +79,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+

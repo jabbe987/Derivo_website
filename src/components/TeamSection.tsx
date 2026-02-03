@@ -1,4 +1,6 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
+import filipProfil from "../assets/filipProfil.png";
+import jakobProfil from "../assets/jakobProfil.png";
 
 const TeamSection = () => {
   const team = [
@@ -9,7 +11,7 @@ const TeamSection = () => {
       phone: "+46 76 900 21 04",
       linkedin: "https://www.linkedin.com/in/filip-%C3%B6sterlund-a1925b251/",
       bio: "Filip är vatteningenjör med fokus på dagvatten, hydraulisk modellering och tekniska utredningar. Han tar fram underlag och lösningar för fördröjning, rening och skyfall, och arbetar ofta nära beställare från tidig analys till färdig leverans. Bakgrunden i Försvarsmakten som stridsbåtschef och amfibiedykare har gett honom ett tydligt säkerhetsfokus, struktur och vana att fatta beslut i komplexa situationer.",
-      image: "",
+      image: filipProfil,
     },
     {
       name: "Anton Nilsson",
@@ -27,7 +29,7 @@ const TeamSection = () => {
       phone: "+46 73 980 74 02",
       linkedin: "https://www.linkedin.com/in/jakob-%C3%B6sterlund-0a49902b0/",
       bio: "Jakob är civilingenjörsstudent i Informationsteknologi med inriktning inom mjukvaruutveckling. Han driver förbättringar inom system, webb och digitala arbetsflöden och bidrar med teknisk problemlösning, struktur och ett lugnt, ansvarstagande arbetssätt.",
-      image: "",
+      image: jakobProfil,
     },
   ];
 
@@ -58,7 +60,7 @@ const TeamSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Photo */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 {member.image ? (
                   <img
                     src={member.image}
@@ -92,8 +94,8 @@ const TeamSection = () => {
                     </svg>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
-                <div className="absolute bottom-4 left-6 right-6">
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,hsl(var(--primary)/0.55)_22%,transparent_25%)]" />
+                <div className="absolute bottom-2 left-6 right-6">
                   <h3 className="font-serif text-2xl text-primary-foreground font-semibold">
                     {member.name}
                   </h3>
