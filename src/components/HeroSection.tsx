@@ -33,7 +33,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-primary-foreground/85 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-primary-foreground/85 text-lg md:text-xl max-w-4xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             Derivo är ett mindre konsultbolag som arbetar med utredning, analys och projektering inom VA.
             Vi tar fram underlag som hjälper beställare att bedöma förutsättningar, jämföra alternativ och 
             fatta beslut i rätt skede. Som mindre aktör kan vi arbeta i nära dialog med dig som beställare 
