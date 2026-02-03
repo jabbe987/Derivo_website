@@ -10,7 +10,7 @@ const TeamSection = () => {
       email: "filip@derivo.se",
       phone: "+46 76 900 21 04",
       linkedin: "https://www.linkedin.com/in/filip-%C3%B6sterlund-a1925b251/",
-      bio: "Filip är vatteningenjör med fokus på dagvatten, hydraulisk modellering och tekniska utredningar. Han tar fram underlag och lösningar för fördröjning, rening och skyfall, och arbetar ofta nära beställare från tidig analys till färdig leverans. Bakgrunden i Försvarsmakten som stridsbåtschef och amfibiedykare har gett honom ett tydligt säkerhetsfokus, struktur och vana att fatta beslut i komplexa situationer.",
+      bio: "Filip är vatteningenjör med fokus på dagvatten, hydraulisk modellering och tekniska utredningar. Han tar fram underlag och lösningar för fördröjning, rening och skyfall, och arbetar ofta nära beställare från tidig analys till färdig leverans.",
       image: filipProfil,
     },
     {
@@ -28,7 +28,7 @@ const TeamSection = () => {
       email: "jakob@derivo.se",
       phone: "+46 73 980 74 02",
       linkedin: "https://www.linkedin.com/in/jakob-%C3%B6sterlund-0a49902b0/",
-      bio: "Jakob är civilingenjörsstudent i Informationsteknologi med inriktning inom mjukvaruutveckling. Han driver förbättringar inom system, webb och digitala arbetsflöden och bidrar med teknisk problemlösning, struktur och ett lugnt, ansvarstagande arbetssätt.",
+      bio: "Jakob är civilingenjörsstudent i Informationsteknologi med inriktning inom mjukvaruutveckling. Han driver förbättringar inom system, webb och digitala arbetsflöden och bidrar med teknisk problemlösning, struktur och innovation inom digitala lösningar.",
       image: jakobProfil,
     },
   ];
@@ -105,7 +105,7 @@ const TeamSection = () => {
 
               {/* Content */}
               <div className="p-6">
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                <p className="text-muted-foreground text-sm leading-relaxed h-48 mb-3">
                   {member.bio}
                 </p>
 
