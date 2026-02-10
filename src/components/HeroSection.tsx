@@ -23,7 +23,7 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-4 py-2 mb-8 animate-fade-up">
             <Droplets className="w-4 h-4 text-accent" />
             <span className="text-primary-foreground/90 text-sm font-medium">
-              Konsulter inom VA & dagvatten
+              Konsulttjänster inom vatten
             </span>
           </div>
 

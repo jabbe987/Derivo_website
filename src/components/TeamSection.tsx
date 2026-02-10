@@ -1,5 +1,5 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
-import filipProfil from "../assets/filipProfil.png";
+import filipProfil from "../assets/filipProfil2.png";
 import jakobProfil from "../assets/jakobProfil.png";
 
 const TeamSection = () => {
