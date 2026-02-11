@@ -1,5 +1,6 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
 import filipProfil from "../assets/filipProfil2.png";
+import antonProfil from "../assets/antonProfil.png";
 import jakobProfil from "../assets/jakobProfil.png";
 
 const TeamSection = () => {
@@ -12,6 +13,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com/in/filip-%C3%B6sterlund-a1925b251/",
       bio: "Filip är vatteningenjör med fokus på dagvatten, hydraulisk modellering och tekniska utredningar. Han tar fram underlag och lösningar för fördröjning, rening och skyfall, och arbetar ofta nära beställare från tidig analys till färdig leverans.",
       image: filipProfil,
+      imagePosition: "center",
     },
     {
       name: "Anton Nilsson",
@@ -20,7 +22,8 @@ const TeamSection = () => {
       phone: "+46 70 461 28 88",
       linkedin: "https://www.linkedin.com/in/anton-nilsson-069a431a1/",
       bio: "Anton är utbildad samhällsplanerare med erfarenhet av platsutveckling och affärsutveckling. I Derivo arbetar han främst med administration, affärsutveckling och strategiska frågor – med fokus på att bygga struktur, skapa långsiktiga kundrelationer och utveckla bolagets erbjudande.",
-      image: "",
+      image: antonProfil,
+      imagePosition: "center 18%",
     },
     {
       name: "Jakob Österlund",
@@ -30,6 +33,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com/in/jakob-%C3%B6sterlund-0a49902b0/",
       bio: "Jakob är civilingenjörsstudent i Informationsteknologi med inriktning inom mjukvaruutveckling. Han driver förbättringar inom system, webb och digitala arbetsflöden och bidrar med teknisk problemlösning, struktur och innovation inom digitala lösningar.",
       image: jakobProfil,
+      imagePosition: "center",
     },
   ];
 
@@ -66,6 +70,7 @@ const TeamSection = () => {
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: member.imagePosition || "center" }}
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-muted via-muted/70 to-muted-foreground/20 flex items-center justify-center">
