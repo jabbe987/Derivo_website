@@ -20,6 +20,7 @@ const Header = () => {
     { label: "Tjänster", href: "#tjanster" },
     { label: "Värderingar", href: "#varderingar" },
     { label: "Team", href: "#team" },
+    { label: "Kultur", href: "#kultur" },
   ];
 
   return (
