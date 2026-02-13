@@ -24,8 +24,8 @@ const ServicesSection = () => {
     },
     {
       icon: Layers,
-      title: "3D-projektering",
-      description: "Teknisk projektering i Civil 3D för att visualisera och designa VA-lösningar.",
+      title: "VA-projektering",
+      description: "Teknisk projektering för att visualisera och designa VA-lösningar.",
     },
     {
       icon: Database,

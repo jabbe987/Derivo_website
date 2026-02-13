@@ -54,9 +54,9 @@ const ValuesSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Number Badge */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-water-gradient rounded-full flex items-center justify-center shadow-card">
+              {/* <div className="absolute -top-4 -left-4 w-12 h-12 bg-water-gradient rounded-full flex items-center justify-center shadow-card">
                 <span className="text-primary-foreground font-bold text-sm">{value.number}</span>
-              </div>
+              </div> */}
 
               <div className="flex items-start gap-4 pt-2">
                 {/* Icon */}

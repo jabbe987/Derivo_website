@@ -15,7 +15,7 @@ const Footer = () => {
     "Hydraulisk modellering",
     "Skyfallsanalyser",
     "Föroreningsberäkningar",
-    "3D-projektering",
+    "VA-projektering",
   ];
 
   return (
