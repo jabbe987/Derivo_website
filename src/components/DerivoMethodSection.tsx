@@ -33,7 +33,7 @@ const DerivoMethodSection = () => {
   const [openItems, setOpenItems] = useState<string[]>([]);
 
   return (
-    <section id="sa-bygger-vi-derivo" className="py-24 bg-background">
+    <section id="kultur" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">

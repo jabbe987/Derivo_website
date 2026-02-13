@@ -6,7 +6,7 @@ const ContactSection = () => {
       name: "Filip Österlund",
       role: "VA-utredare / Grundare",
       email: "filip@derivo.se",
-      phone: "+46 76 900 21 04",
+      phone: "+46 21 813 13 10",
       linkedin: "https://www.linkedin.com/in/filip-%C3%B6sterlund-a1925b251/",
     },
     {
@@ -79,7 +79,7 @@ const ContactSection = () => {
                       <span className="text-sm">{contact.email}</span>
                     </a>
                     <a
-                      href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                      href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
                       className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
                     >
                       <Phone className="w-4 h-4" />

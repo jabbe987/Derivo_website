@@ -9,7 +9,7 @@ const TeamSection = () => {
       name: "Filip Österlund",
       role: "Medgrundare & VA-utredare",
       email: "filip@derivo.se",
-      phone: "+46 76 900 21 04",
+      phone: "+46 21 813 13 10",
       linkedin: "https://www.linkedin.com/in/filip-%C3%B6sterlund-a1925b251/",
       bio: "Filip är vatteningenjör med fokus på dagvatten, hydraulisk modellering och tekniska utredningar. Han tar fram underlag och lösningar för fördröjning, rening och skyfall, och arbetar ofta nära beställare från tidig analys till färdig leverans.",
       image: filipProfil,
@@ -124,7 +124,7 @@ const TeamSection = () => {
                     <span className="text-sm">{member.email}</span>
                   </a>
                   <a
-                    href={`tel:${member.phone.replace(/\s/g, "")}`}
+                    href={`tel:${member.phone.replace(/[^\d+]/g, "")}`}
                     className="flex items-center gap-3 text-foreground hover:text-accent transition-colors"
                   >
                     <Phone className="w-4 h-4 text-accent" />

@@ -7,6 +7,7 @@ const Footer = () => {
     { label: "Tjänster", href: "#tjanster" },
     { label: "Värderingar", href: "#varderingar" },
     { label: "Team", href: "#team" },
+    { label: "Kultur", href: "#kultur" },
     { label: "Kontakt", href: "#kontakt" },
   ];
 
@@ -84,11 +85,11 @@ const Footer = () => {
                   <span className="text-sm">filip@derivo.se</span>
                 </a>
                 <a
-                  href="tel:+46769002104"
+                  href="tel:+46218131310"
                   className="mt-2 flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  <span className="text-sm">+46 76 900 21 04</span>
+                  <span className="text-sm">+46 21 813 13 10</span>
                 </a>
               </div>
               <div>
