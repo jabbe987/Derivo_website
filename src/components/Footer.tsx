@@ -118,11 +118,6 @@ const Footer = () => {
           <p className="text-primary-foreground/60 text-sm">
             © {new Date().getFullYear()} Derivo AB. Alla rättigheter förbehållna.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-primary-foreground/60 text-sm hover:text-accent transition-colors">
-              Integritetspolicy
-            </a>
-          </div>
         </div>
       </div>
     </footer>
