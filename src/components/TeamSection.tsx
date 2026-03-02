@@ -27,7 +27,7 @@ const TeamSection = () => {
     },
     {
       name: "Jakob Österlund",
-      role: "IT ansvarig",
+      role: "IT-utvecklare",
       email: "jakob@derivo.se",
       phone: "+46 73 980 74 02",
       linkedin: "https://www.linkedin.com/in/jakob-%C3%B6sterlund-0a49902b0/",

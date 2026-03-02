@@ -25,7 +25,7 @@ const ServicesSection = () => {
     {
       icon: Layers,
       title: "VA-projektering",
-      description: "Teknisk projektering för att visualisera och designa VA-lösningar.",
+      description: "Teknisk projektering och dimensionering av VA- och dagvattenlösningar – från underlag och beräkningar till systemutformning.",
     },
     {
       icon: Database,
