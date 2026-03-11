@@ -468,7 +468,7 @@ export const translations: Record<Language, SiteTranslation> = {
         "Filip and Anton run Derivo AB together. Filip primarily leads assignments and delivers technical investigations, while Anton is responsible for business development and company structure.",
       storyTitle: "Our story",
       storyText:
-        "Derivo's founders Filip and Anton are childhood friends from Vasteras who first got to know each other through football. They spent much of their adult lives living in different parts of Sweden, and it was only when Filip moved back to Vasteras after his studies in Lund that the idea of building a company together started to take shape.",
+        "Derivo's founders Filip and Anton are childhood friends from Västerås who first got to know each other through football. They spent much of their adult lives living in different parts of Sweden, and it was only when Filip moved back to Västerås after his studies in Lund that the idea of building a company together started to take shape.",
       linkedinComingSoon: "LinkedIn coming soon",
       members: [
         {
@@ -548,7 +548,7 @@ export const translations: Record<Language, SiteTranslation> = {
       inquiriesCta: "Email us here",
       inquiriesText: "For new assignments, questions and inquiries.",
       locationTitle: "Location",
-      locationText: "Herrgardsgatan 4b, Vasteras, Sweden",
+      locationText: "Herrgärdsgatan 4b, Västerås, Sweden",
       contacts: [
         {
           name: "Filip Österlund",
