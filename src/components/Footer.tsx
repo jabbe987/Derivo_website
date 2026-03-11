@@ -1,43 +1,30 @@
 import { Mail, Phone } from "lucide-react";
 import logo from "@/assets/Logo.png";
+import type { Language } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const Footer = () => {
-  const quickLinks = [
-    { label: "Om oss", href: "#om-oss" },
-    { label: "Tjänster", href: "#tjanster" },
-    { label: "Värderingar", href: "#varderingar" },
-    { label: "Team", href: "#team" },
-    { label: "Kultur", href: "#kultur" },
-    { label: "Kontakt", href: "#kontakt" },
-  ];
-
-  const services = [
-    "Dagvattenutredningar",
-    "Hydraulisk modellering",
-    "Skyfallsanalyser",
-    "Föroreningsberäkningar",
-    "VA-projektering",
-  ];
+const Footer = ({ language }: { language: Language }) => {
+  const translation = translations[language];
 
   return (
     <footer className="bg-[#256980] text-primary-foreground">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img src={logo} alt="Derivo logo" className="h-10 w-auto" />
             </div>
             <p className="text-primary-foreground/70 leading-relaxed mb-6">
-              Underlag för bättre beslut.
+              {translation.footer.tagline}
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-6">Snabblänkar</h4>
+            <h4 className="font-serif font-semibold text-lg mb-6">{translation.footer.quickLinksTitle}</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
+              {translation.nav.links
+                .concat([{ label: translation.nav.contactCta, href: "#contact" }])
+                .map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -46,15 +33,14 @@ const Footer = () => {
                     {link.label}
                   </a>
                 </li>
-              ))}
+                ))}
             </ul>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-6">Tjänster</h4>
+            <h4 className="font-serif font-semibold text-lg mb-6">{translation.footer.servicesTitle}</h4>
             <ul className="space-y-3">
-              {services.map((service) => (
+              {translation.footer.services.map((service) => (
                 <li key={service}>
                   <span className="text-primary-foreground/70">{service}</span>
                 </li>
@@ -62,9 +48,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-6">Kontakt</h4>
+            <h4 className="font-serif font-semibold text-lg mb-6">{translation.footer.contactTitle}</h4>
             <div className="space-y-5">
               <div>
                 <a
@@ -113,10 +98,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} Derivo AB. Alla rättigheter förbehållna.
+            © {new Date().getFullYear()} Derivo AB. {translation.footer.copyright}
           </p>
         </div>
       </div>

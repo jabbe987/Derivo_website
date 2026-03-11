@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/Logo.png";
+import { persistLanguagePreference, type Language } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const Header = () => {
+const Header = ({ language }: { language: Language }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const translation = translations[language];
+  const alternateLanguage = language === "sv" ? "en" : "sv";
+  const alternatePath = `/${alternateLanguage}${location.hash}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,14 +21,6 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { label: "Om oss", href: "#om-oss" },
-    { label: "Tjänster", href: "#tjanster" },
-    { label: "Värderingar", href: "#varderingar" },
-    { label: "Team", href: "#team" },
-    { label: "Kultur", href: "#kultur" },
-  ];
 
   return (
     <header
@@ -34,13 +33,12 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <Link to={`/${language}`} className="flex items-center">
             <img src={logo} alt="Derivo logo" className="h-10 w-auto" />
-          </a>
+          </Link>
           <div className="flex items-center gap-4">
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
+              {translation.nav.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -51,16 +49,25 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant={isScrolled ? "default" : "default"} size="lg" asChild>
-                <a href="#kontakt">Kontakta oss</a>
+              <Link
+                to={alternatePath}
+                className={`text-sm font-semibold transition-colors hover:text-accent ${
+                  isScrolled ? "text-foreground" : "text-foreground/90"
+                }`}
+                aria-label={translation.nav.languageLabel}
+                onClick={() => persistLanguagePreference(alternateLanguage)}
+              >
+                {alternateLanguage.toUpperCase()}
+              </Link>
+              <Button variant="default" size="lg" asChild>
+                <a href="#contact">{translation.nav.contactCta}</a>
               </Button>
             </nav>
 
-            {/* Mobile Menu Toggle */}
             <button
               className="md:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Oppna meny"
+              aria-label={translation.nav.openMenuLabel}
             >
               {isMobileMenuOpen ? (
                 <X className={isScrolled ? "text-foreground" : "text-foreground"} />
@@ -76,7 +83,7 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/20 bg-card/95 backdrop-blur-md animate-fade-in">
             <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
+              {translation.nav.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -86,8 +93,20 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
+              <Link
+                to={alternatePath}
+                className="text-foreground font-medium py-2 hover:text-accent transition-colors"
+                onClick={() => {
+                  persistLanguagePreference(alternateLanguage);
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                {translation.nav.languageLabel}: {alternateLanguage.toUpperCase()}
+              </Link>
               <Button variant="default" size="lg" className="mt-2" asChild>
-                <a href="#kontakt">Kontakta oss</a>
+                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  {translation.nav.contactCta}
+                </a>
               </Button>
             </nav>
           </div>

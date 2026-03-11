@@ -2,11 +2,52 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { getInitialLanguage, isLanguage, persistLanguagePreference, type Language } from "@/lib/i18n";
 
 const queryClient = new QueryClient();
+
+const LanguageRedirect = () => {
+  const language = getInitialLanguage();
+
+  return <Navigate to={`/${language}`} replace />;
+};
+
+const LanguagePage = ({ language }: { language: Language }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    persistLanguagePreference(language);
+  }, [language]);
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        requestAnimationFrame(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [location.hash, location.pathname]);
+
+  return <Index language={language} />;
+};
+
+const ParamLanguagePage = () => {
+  const { language } = useParams();
+
+  if (!isLanguage(language)) {
+    return <NotFound />;
+  }
+
+  return <LanguagePage language={language} />;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -15,7 +56,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<LanguageRedirect />} />
+          <Route path="/sv" element={<LanguagePage language="sv" />} />
+          <Route path="/en" element={<LanguagePage language="en" />} />
+          <Route path="/:language" element={<ParamLanguagePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

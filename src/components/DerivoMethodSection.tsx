@@ -1,53 +1,23 @@
 import { useState } from "react";
-import { BookOpenCheck, Handshake, Sprout } from "lucide-react";
+import type { Language } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const principles = [
-  {
-    id: "item-1",
-    icon: BookOpenCheck,
-    title: "En kultur av lärande",
-    shortText:
-      "Erfarenheter från ett projekt ska stärka nästa. Frågor uppmuntras. Perspektiv prövas. Metoder utvecklas.",
-    longText:
-      "Vi ser kunskapsdelning som en självklar del av vårt arbetssätt. Erfarenheter från ett projekt ska stärka nästa - systematiskt och medvetet. Frågor uppmuntras. Perspektiv prövas. Metoder utvecklas. Genom strukturerad återkoppling, gemensam problemlösning och ett öppet klimat med högt i tak skapar vi förutsättningar för att våra medarbetare ska lära sig snabbare, fatta bättre beslut och växa tryggt i sin roll.",
-  },
-  {
-    id: "item-2",
-    icon: Handshake,
-    title: "Samarbete över erfarenhetsnivåer",
-    shortText: "Kunskap ska delas, inte stanna hos individen.",
-    longText:
-      "Vi tror inte på modellen där kunskap samlas hos en enskild person. I våra projekt möts erfarenhet och nya perspektiv. Senior kompetens och junior drivkraft arbetar sida vid sida - inte bara för att leverera kvalitet i dag, utan för att bygga starkare kompetens över tid. Det stärker både individen, projekten och organisationen.",
-  },
-  {
-    id: "item-3",
-    icon: Sprout,
-    title: "Delaktighet och långsiktighet",
-    shortText: "Bolagets utveckling och individens utveckling ska gå hand i hand.",
-    longText:
-      "Vi vill att den som bidrar till Derivos utveckling också ska känna delaktighet i den. När bolaget växer ska det märkas - i ansvar, inflytande och möjligheter att utvecklas vidare. Vi bygger en kultur där engagemang, kvalitet och långsiktighet förstärker varandra. Det skapar motivation, stabilitet och ett bolag som utvecklas hållbart över tid.",
-  },
-];
-
-const DerivoMethodSection = () => {
+const DerivoMethodSection = ({ language }: { language: Language }) => {
   const [openItems, setOpenItems] = useState<string[]>([]);
+  const { culture } = translations[language];
 
   return (
-    <section id="kultur" className="py-24 bg-background">
+    <section id="culture" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Vår kultur
+            {culture.eyebrow}
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Så bygger vi Derivo
+            {culture.title}
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Hos Derivo bygger vi inte bara tekniska lösningar - vi bygger kompetens,
-            struktur och ett arbetssätt som utvecklas över tid. Vi arbetar med en tydlig
-            metodik där erfarenhet, analys och kontinuerlig utveckling är en naturlig del
-            av varje uppdrag. Vår ambition är att varje projekt ska stärka nästa - och att
-            kunskap ska delas, inte samlas.
+            {culture.description}
           </p>
         </div>
 
@@ -56,7 +26,7 @@ const DerivoMethodSection = () => {
             openItems.length > 0 ? "items-start" : ""
           }`}
         >
-          {principles.map((principle, index) => {
+          {culture.principles.map((principle, index) => {
             const isOpen = openItems.includes(principle.id);
 
             return (

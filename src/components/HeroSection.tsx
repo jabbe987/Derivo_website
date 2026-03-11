@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Brain, Leaf, Droplets} from "lucide-react";
+import { ArrowRight, Droplets } from "lucide-react";
+import type { Language } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
 
-const HeroSection = () => {
-  const highlights = [
-    { icon: Shield, text: "Trygga beslutsunderlag" },
-    { icon: Brain, text: "Smarta systemval" },
-    { icon: Leaf, text: "Hållbar dimensionering" },
-  ];
+const HeroSection = ({ language }: { language: Language }) => {
+  const { hero } = translations[language];
 
   return (
     <section className="relative min-h-screen bg-hero flex items-center overflow-hidden">
@@ -23,39 +21,36 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-4 py-2 mb-8 animate-fade-up">
             <Droplets className="w-4 h-4 text-accent" />
             <span className="text-primary-foreground/90 text-sm font-medium">
-              Konsulttjänster inom vatten
+              {hero.badge}
             </span>
           </div>
 
           {/* Main Heading */}
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary-foreground mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Underlag för bättre beslut
+            {hero.title}
           </h1>
 
           {/* Subheading */}
           <p className="text-primary-foreground/85 text-lg md:text-xl max-w-4xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Derivo är ett mindre konsultbolag som arbetar med utredning, analys och projektering inom VA.
-            Vi tar fram underlag som hjälper beställare att bedöma förutsättningar, jämföra alternativ och 
-            fatta beslut i rätt skede. Som mindre aktör kan vi arbeta i nära dialog med dig som beställare 
-            och snabbt anpassa vårt arbetssätt när förutsättningarna förändras.
+            {hero.description}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button variant="hero" size="xl" asChild>
-              <a href="#kontakt">
-                Kontakta oss
+              <a href="#contact">
+                {hero.primaryCta}
                 <ArrowRight className="w-5 h-5" />
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="#tjanster">Våra tjänster</a>
+              <a href="#services">{hero.secondaryCta}</a>
             </Button>
           </div>
 
           {/* Highlights */}
           <div className="flex flex-wrap justify-center gap-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            {highlights.map((item) => (
+            {hero.highlights.map((item) => (
               <div key={item.text} className="flex items-center gap-2 text-primary-foreground/80">
                 <item.icon className="w-5 h-5 text-accent" />
                 <span className="text-sm font-medium">{item.text}</span>
