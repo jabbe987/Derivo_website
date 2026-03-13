@@ -24,7 +24,7 @@ const TeamSection = ({ language }: { language: Language }) => {
           {team.members.map((member, index) => (
             <div
               key={member.name}
-              className="bg-card rounded-2xl shadow-card overflow-hidden hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+              className="bg-card rounded-2xl shadow-card overflow-hidden hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-80 overflow-hidden">
@@ -71,12 +71,12 @@ const TeamSection = ({ language }: { language: Language }) => {
                 </div>
               </div>
 
-              <div className="p-6">
-                <p className="text-muted-foreground text-sm leading-relaxed h-48 mb-3">
+              <div className="p-6 flex flex-1 flex-col">
+                <p className="text-muted-foreground text-sm leading-relaxed min-h-48 mb-3">
                   {member.bio}
                 </p>
 
-                <div className="space-y-3">
+                <div className="space-y-3 mt-auto">
                   <a
                     href={`mailto:${member.email}`}
                     className="flex items-center gap-3 text-foreground hover:text-accent transition-colors"
@@ -118,7 +118,7 @@ const TeamSection = ({ language }: { language: Language }) => {
 
         <div className="mt-16 max-w-3xl mx-auto text-center">
           <h3 className="font-serif text-2xl text-foreground mb-4">{team.storyTitle}</h3>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
             {team.storyText}
           </p>
         </div>

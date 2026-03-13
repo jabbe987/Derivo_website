@@ -145,6 +145,7 @@ export const translations: Record<Language, SiteTranslation> = {
         "Derivo hjälper både offentliga och privata beställare med tekniska underlag inom VA och samhällsbyggnad. Vi utgår från faktiska behov och lokala förutsättningar och kombinerar teknisk kompetens med förståelse för platsens sammanhang. Ambitionen är att stärka kvalitet, tydlighet och trygghet i planering och genomförande.",
         "Som mindre konsultbolag kan vi arbeta nära beställaren och anpassa arbetssättet när förutsättningarna förändras. Vi eftersträvar väl avvägda vägval både ur ett ekonomiskt och tekniskt perspektiv med hänsyn till berörda intressen.",
         "Vårt mål är att leverera beslutsunderlag och lösningar som bidrar till smartare och mer hållbara samhällen, där kunden får stöd att fatta välgrundade beslut i både tidiga och sena skeden. Vi samarbetar även med etablerade aktörer i branschen och kan vid behov ta in kompletterande specialistkompetens.",
+        "Vi tror att en bra utredning och en genomtänkt systemlösning ofta är den billigaste försäkringen – och samtidigt skapar tydligt mervärde.",
       ],
       quote:
         '"Vi tar fram åtgärder och lösningar med syfte, för ett samhälle som planeras smartare, byggs tryggare och står starkare över tid."',
@@ -232,7 +233,7 @@ export const translations: Record<Language, SiteTranslation> = {
         "Tillsammans driver Filip och Anton Derivo AB. Filip är i första hand uppdragsansvarig och utför tekniska utredningar, medan Anton ansvarar för affärsutveckling och bolagsstruktur.",
       storyTitle: "Vår berättelse",
       storyText:
-        "Derivos grundare Filip och Anton är barndomsvänner från Västerås och lärde känna varandra genom fotbollen. Under större delen av deras vuxna liv har de bott på olika ställen i landet och det var först när Filip flyttade tillbaka till Västerås efter sina studier i Lund som planerna om att starta företag började ta form.",
+        "Filip och Anton har känt varandra sedan barndomen i Västerås. Under uppväxten hade vi båda en tydlig ambition att en dag bygga något eget. När Filip senare började jobba i VA- och dagvattenprojekt blev det snabbt tydligt hur stor skillnad ett bra beslutsunderlag kan göra – men också hur ofta arbetet fastnar i rutin: \"så här har vi alltid gjort\". Inte för att någon vill leverera dåligt, utan för att tid, processer och standardmallar ibland styr mer än platsens behov. Samtidigt ökade trycket i projekten: fler krav, mer klimatpåverkan och större konsekvenser när man tar fel beslut tidigt.\n\nIdén om Derivo tog form när Filip flyttade tillbaka till Västerås efter studierna i Lund. Vi började skissa på hur ett mindre bolag skulle kunna jobba annorlunda: mer metodiskt, mer transparent och mer fokuserat på att faktiskt hjälpa beställaren framåt – inte bara leverera en rapport.\n\nDet blev starten på Derivo. Vi vill att varje uppdrag ska kännas tydligt, genomtänkt och användbart – och att det ska vara lätt för beställaren att förstå vad som är viktigt och varför.",
       linkedinComingSoon: "LinkedIn kommer snart",
       members: [
         {
@@ -363,9 +364,9 @@ export const translations: Record<Language, SiteTranslation> = {
     },
     hero: {
       badge: "Water consultancy services",
-      title: "Foundations for better decisions",
+      title: "Basis for better decisions",
       description:
-        "Derivo is a small consultancy focused on investigations, analysis and design within water and wastewater infrastructure. We produce decision material that helps clients assess conditions, compare alternatives and make informed decisions at the right stage. As a smaller firm, we work closely with clients and can quickly adapt our way of working when project conditions change.",
+        "Derivo is a small consultancy focused on investigations, analysis and design within water infrastructure. We produce decision material that helps clients assess conditions, compare alternatives and make informed decisions at the right stage. As a smaller firm, we work closely with clients and can quickly adapt our way of working when project conditions change.",
       primaryCta: "Contact us",
       secondaryCta: "Our services",
       highlights: [
@@ -381,6 +382,7 @@ export const translations: Record<Language, SiteTranslation> = {
         "Derivo supports both public and private clients with technical decision material in water infrastructure and community development. We start from real needs and local conditions, combining technical competence with an understanding of the wider context. Our aim is to strengthen quality, clarity and confidence in planning and delivery.",
         "As a smaller consultancy, we work closely with the client and adapt our process when conditions change. We strive for well-balanced choices from both economic and technical perspectives, while considering the interests affected by each project.",
         "Our goal is to deliver decision support and solutions that contribute to smarter and more sustainable communities, helping clients make well-founded decisions in both early and later project stages. We also collaborate with established industry partners and can bring in complementary specialist expertise when needed.",
+        "We believe that a thorough analysis and a well-considered system solution are often the most cost-effective form of insurance, while also creating clear added value.",
       ],
       quote:
         '"We develop actions and solutions with purpose, for communities that are planned more intelligently, built more safely and remain resilient over time."',
@@ -468,7 +470,7 @@ export const translations: Record<Language, SiteTranslation> = {
         "Filip and Anton run Derivo AB together. Filip primarily leads assignments and delivers technical investigations, while Anton is responsible for business development and company structure.",
       storyTitle: "Our story",
       storyText:
-        "Derivo's founders Filip and Anton are childhood friends from Västerås who first got to know each other through football. They spent much of their adult lives living in different parts of Sweden, and it was only when Filip moved back to Västerås after his studies in Lund that the idea of building a company together started to take shape.",
+        "Filip and Anton have known each other since childhood in Västerås. Growing up, we both had a clear ambition to one day build something of our own. When Filip later began working on water and stormwater projects, it quickly became clear how much difference strong decision support can make, but also how often the work gets stuck in routine: \"this is how we have always done it.\" Not because anyone wants to deliver poor results, but because time, processes and standard templates sometimes shape the outcome more than the needs of the site. At the same time, the pressure on projects increased: more requirements, greater climate impact and bigger consequences when the wrong decisions are made early.\n\nThe idea for Derivo took shape when Filip moved back to Västerås after his studies in Lund. We started sketching out how a smaller company could work differently: more methodically, more transparently and more focused on actually helping the client move forward, not just delivering a report.\n\nThat became the start of Derivo. We want every assignment to feel clear, well thought through and useful, and we want it to be easy for the client to understand what matters and why.",
       linkedinComingSoon: "LinkedIn coming soon",
       members: [
         {
@@ -567,7 +569,7 @@ export const translations: Record<Language, SiteTranslation> = {
       ],
     },
     footer: {
-      tagline: "Foundations for better decisions.",
+      tagline: "Basis for better decisions.",
       quickLinksTitle: "Quick links",
       servicesTitle: "Services",
       contactTitle: "Contact",
