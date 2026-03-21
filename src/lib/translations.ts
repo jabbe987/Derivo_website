@@ -1,4 +1,4 @@
-import { BarChart3, BookOpenCheck, Brain, CloudRain, Clock, Database, Droplets, Eye, Filter, Handshake, Layers, Leaf, MapPin, MessageCircle, Shield, Sprout, Target } from "lucide-react";
+import { BarChart3, BookOpenCheck, Brain, CloudRain, Clock, Database, Droplets, Eye, Filter, Handshake, Layers, Leaf, MessageCircle, Pickaxe, ScanSearch, Shield, Sprout, Target } from "lucide-react";
 import filipProfil from "@/assets/filipProfil2.png";
 import antonProfil from "@/assets/antonProfil.png";
 import jakobProfil from "@/assets/jakobProfil.png";
@@ -126,23 +126,24 @@ export const translations: Record<Language, SiteTranslation> = {
       languageLabel: "Språk",
     },
     hero: {
-      badge: "Konsulttjänster inom vatten",
+      badge: "Konsulttjänster inom mark och vatten",
       title: "Underlag för bättre beslut",
       description:
-        "Derivo är ett mindre konsultbolag som arbetar med utredning, analys och projektering inom VA. Vi tar fram underlag som hjälper beställare att bedöma förutsättningar, jämföra alternativ och fatta beslut i rätt skede. Som mindre aktör kan vi arbeta i nära dialog med dig som beställare och snabbt anpassa vårt arbetssätt när förutsättningarna förändras.",
+        "Derivo är ett mindre konsultbolag som arbetar med utredning, analys och projektering inom mark och vatten. Vi tar fram underlag som hjälper beställare att bedöma förutsättningar, jämföra alternativ och fatta beslut i rätt skede. Som mindre aktör kan vi arbeta i nära dialog med dig som beställare och snabbt anpassa vårt arbetssätt när förutsättningarna förändras.",
       primaryCta: "Kontakta oss",
       secondaryCta: "Våra tjänster",
       highlights: [
         { icon: Shield, text: "Trygga beslutsunderlag" },
         { icon: Brain, text: "Smarta systemval" },
         { icon: Leaf, text: "Hållbar dimensionering" },
+        { icon: Layers, text: "Samordnat mark & vatten" },
       ],
     },
     about: {
       eyebrow: "Om Derivo",
       title: "Beslutsunderlag anpassade för dig och samhället",
       paragraphs: [
-        "Derivo hjälper både offentliga och privata beställare med tekniska underlag inom VA och samhällsbyggnad. Vi utgår från faktiska behov och lokala förutsättningar och kombinerar teknisk kompetens med förståelse för platsens sammanhang. Ambitionen är att stärka kvalitet, tydlighet och trygghet i planering och genomförande.",
+        "Derivo hjälper både offentliga och privata beställare med tekniska underlag inom mark och vatten, med särskild spets inom dagvatten, skyfall och hydraulisk modellering. Genom att samordna mark- och vattenfrågor tidigt i processen kan vi identifiera beroenden, minska risken för omtag och ta fram lösningar som tar hänsyn till fler faktorer och risker. Vi utgår från faktiska behov och lokala förutsättningar och kombinerar teknisk kompetens med förståelse för platsens sammanhang – med ambitionen att stärka kvalitet, tydlighet och trygghet i planering och genomförande.",
         "Som mindre konsultbolag kan vi arbeta nära beställaren och anpassa arbetssättet när förutsättningarna förändras. Vi eftersträvar väl avvägda vägval både ur ett ekonomiskt och tekniskt perspektiv med hänsyn till berörda intressen.",
         "Vårt mål är att leverera beslutsunderlag och lösningar som bidrar till smartare och mer hållbara samhällen, där kunden får stöd att fatta välgrundade beslut i både tidiga och sena skeden. Vi samarbetar även med etablerade aktörer i branschen och kan vid behov ta in kompletterande specialistkompetens.",
         "Vi tror att en bra utredning och en genomtänkt systemlösning ofta är den billigaste försäkringen – och samtidigt skapar tydligt mervärde.",
@@ -152,9 +153,9 @@ export const translations: Record<Language, SiteTranslation> = {
     },
     services: {
       eyebrow: "Våra tjänster",
-      title: "Modellering, projektering och utredningar inom vatten",
+      title: "Modellering, projektering och utredningar inom mark och vatten",
       description:
-        "Vi erbjuder ett brett spektrum av tekniska tjänster inom VA och dagvatten, alltid med fokus på praktisk nytta och hållbara lösningar.",
+        "Vi erbjuder ett brett spektrum av tekniska tjänster inom mark och vatten, alltid med fokus på praktisk nytta och hållbara lösningar.",
       items: [
         {
           icon: Droplets,
@@ -191,6 +192,18 @@ export const translations: Record<Language, SiteTranslation> = {
           title: "Systemlösningar",
           description:
             "Framtagning av helhetslösningar för dagvattenhantering anpassade efter platsens unika förutsättningar.",
+        },
+        {
+          icon: Pickaxe,
+          title: "Geoteknik & markundersökningar",
+          description:
+            "Underlag för grundläggning, stabilitet och markförhållanden – med tydlig koppling till utformning och genomförande i projekt.",
+        },
+        {
+          icon: ScanSearch,
+          title: "Förorenad mark",
+          description:
+            "Stöd i riskbedömning och åtgärdsstrategi vid projekt där markföroreningar behöver utredas och hanteras.",
         },
       ],
     },
@@ -233,7 +246,7 @@ export const translations: Record<Language, SiteTranslation> = {
         "Tillsammans driver Filip och Anton Derivo AB. Filip är i första hand uppdragsansvarig och utför tekniska utredningar, medan Anton ansvarar för affärsutveckling och bolagsstruktur.",
       storyTitle: "Vår berättelse",
       storyText:
-        "Filip och Anton har känt varandra sedan barndomen i Västerås. Under uppväxten hade vi båda en tydlig ambition att en dag bygga något eget. När Filip senare började jobba i VA- och dagvattenprojekt blev det snabbt tydligt hur stor skillnad ett bra beslutsunderlag kan göra – men också hur ofta arbetet fastnar i rutin: \"så här har vi alltid gjort\". Inte för att någon vill leverera dåligt, utan för att tid, processer och standardmallar ibland styr mer än platsens behov. Samtidigt ökade trycket i projekten: fler krav, mer klimatpåverkan och större konsekvenser när man tar fel beslut tidigt.\n\nIdén om Derivo tog form när Filip flyttade tillbaka till Västerås efter studierna i Lund. Vi började skissa på hur ett mindre bolag skulle kunna jobba annorlunda: mer metodiskt, mer transparent och mer fokuserat på att faktiskt hjälpa beställaren framåt – inte bara leverera en rapport.\n\nDet blev starten på Derivo. Vi vill att varje uppdrag ska kännas tydligt, genomtänkt och användbart – och att det ska vara lätt för beställaren att förstå vad som är viktigt och varför.",
+        "Filip och Anton har känt varandra sedan barndomen i Västerås. Under uppväxten hade vi båda en tydlig ambition att en dag bygga något eget. När Filip senare började jobba i VA- och dagvattenprojekt blev det snabbt tydligt hur stor skillnad ett bra beslutsunderlag kan göra – men också hur ofta arbetet fastnar i rutin: \"så här har vi alltid gjort\". Inte för att någon vill leverera dåligt, utan för att tid, processer och standardmallar ibland styr mer än platsens behov. Samtidigt ökade trycket i projekten: fler krav, mer klimatpåverkan och större konsekvenser när man tar fel beslut tidigt.\n\nIdén om Derivo tog form när Filip flyttade tillbaka till Västerås efter studierna i Lund. Vi började skissa på hur ett mindre bolag skulle kunna jobba annorlunda: mer metodiskt, mer transparent och mer fokuserat på att faktiskt hjälpa beställaren framåt – inte bara leverera en rapport.\n\nDet blev starten på Derivo. Vi vill att varje uppdrag ska kännas tydligt, genomtänkt och användbart – och att det ska vara lätt för beställaren att förstå vad som är viktigt och varför. Med tiden har det blivit tydligt att mark och vatten ofta behöver hanteras tillsammans och därför bygger vi Derivo för att kunna ta ett samordnat grepp när projektet kräver det.",
       linkedinComingSoon: "LinkedIn kommer snart",
       members: [
         {
@@ -343,6 +356,8 @@ export const translations: Record<Language, SiteTranslation> = {
         "Skyfallsanalyser",
         "Föroreningsberäkningar",
         "VA-projektering",
+        "Geoteknik & markundersökningar",
+        "Förorenad mark",
       ],
     },
   },
@@ -363,63 +378,67 @@ export const translations: Record<Language, SiteTranslation> = {
       languageLabel: "Language",
     },
     hero: {
-      badge: "Water consultancy services",
+      badge: "Consultancy services in land and water",
       title: "Basis for better decisions",
       description:
-        "Derivo is a small consultancy focused on investigations, analysis and design within water infrastructure. We produce decision material that helps clients assess conditions, compare alternatives and make informed decisions at the right stage. As a smaller firm, we work closely with clients and can quickly adapt our way of working when project conditions change.",
+        "Derivo is a small consultancy working with investigations, analysis and design within land and water. We produce supporting material that helps clients assess conditions, compare alternatives and make decisions at the right stage. As a smaller firm, we can work in close dialogue with you as a client and quickly adapt our way of working when conditions change.",
       primaryCta: "Contact us",
       secondaryCta: "Our services",
       highlights: [
         { icon: Shield, text: "Reliable decision support" },
         { icon: Brain, text: "Smarter system choices" },
         { icon: Leaf, text: "Sustainable sizing" },
+        { icon: Layers, text: "Coordinated land & water" },
       ],
     },
     about: {
       eyebrow: "About Derivo",
       title: "Decision support shaped for you and for society",
       paragraphs: [
-        "Derivo supports both public and private clients with technical decision material in water infrastructure and community development. We start from real needs and local conditions, combining technical competence with an understanding of the wider context. Our aim is to strengthen quality, clarity and confidence in planning and delivery.",
-        "As a smaller consultancy, we work closely with the client and adapt our process when conditions change. We strive for well-balanced choices from both economic and technical perspectives, while considering the interests affected by each project.",
-        "Our goal is to deliver decision support and solutions that contribute to smarter and more sustainable communities, helping clients make well-founded decisions in both early and later project stages. We also collaborate with established industry partners and can bring in complementary specialist expertise when needed.",
-        "We believe that a thorough analysis and a well-considered system solution are often the most cost-effective form of insurance, while also creating clear added value.",
+        "Derivo supports both public and private clients with technical supporting material in land and water, with particular expertise in stormwater, cloudburst and hydraulic modelling. By coordinating land and water issues early in the process, we can identify dependencies, reduce the risk of rework and develop solutions that take more factors and risks into account. We start from actual needs and local conditions and combine technical expertise with an understanding of the site's context – with the ambition to strengthen quality, clarity and confidence in planning and implementation.",
+
+        "As a smaller consultancy, we can work closely with the client and adapt our way of working when conditions change. We strive for well-balanced choices from both economic and technical perspectives, taking affected interests into account.",
+
+        "Our goal is to deliver supporting material and solutions that contribute to smarter and more sustainable communities, where the client is supported in making well-founded decisions in both early and later stages. We also collaborate with established industry actors and can bring in complementary specialist expertise when needed.",
+
+        "We believe that a good investigation and a well-considered system solution are often the cheapest form of insurance – while also creating clear added value.",
       ],
       quote:
         '"We develop actions and solutions with purpose, for communities that are planned more intelligently, built more safely and remain resilient over time."',
     },
     services: {
       eyebrow: "Our services",
-      title: "Modelling, design and investigations within water",
+      title: "Modelling, design and investigations within land and water",
       description:
-        "We offer a broad range of technical services within water, wastewater and stormwater, always focused on practical value and durable solutions.",
+        "We offer a broad range of technical services within land and water, always with a focus on practical value and sustainable solutions.",
       items: [
         {
           icon: Droplets,
           title: "Stormwater investigations",
           description:
-            "Comprehensive studies for detailed development plans with focus on retention, treatment and discharge of stormwater.",
+            "Comprehensive investigations for detailed development plans with focus on retention, treatment and discharge of stormwater.",
         },
         {
           icon: BarChart3,
           title: "Hydraulic modelling",
           description:
-            "Capacity analysis expertise used to simulate, understand and optimize water infrastructure systems.",
+            "Expertise in capacity analyses to simulate, understand and optimize water infrastructure systems.",
         },
         {
           icon: CloudRain,
           title: "Cloudburst analysis",
           description:
-            "Risk assessments and proposed measures for extreme rainfall events and reduced flood exposure.",
+            "Risk assessments and proposed measures to manage extreme rainfall events and reduce flood risks.",
         },
         {
           icon: Filter,
           title: "Pollution calculations",
           description:
-            "Assessments of pollutant loads used to evaluate impacts and shape treatment solutions.",
+            "Calculations to assess pollutant loads and design treatment solutions.",
         },
         {
           icon: Layers,
-          title: "Water infrastructure design",
+          title: "Water and wastewater design",
           description:
             "Technical design and sizing of water and stormwater solutions, from calculations and supporting material to system layout.",
         },
@@ -428,6 +447,18 @@ export const translations: Record<Language, SiteTranslation> = {
           title: "System solutions",
           description:
             "Integrated stormwater management concepts tailored to the unique conditions of each site.",
+        },
+        {
+          icon: Pickaxe,
+          title: "Geotechnics & ground investigations",
+          description:
+            "Supporting material for foundations, stability and ground conditions, with a clear link to project design and execution.",
+        },
+        {
+          icon: ScanSearch,
+          title: "Contaminated land",
+          description:
+            "Support in risk assessment and remediation strategy for projects where soil contamination needs to be investigated and managed.",
         },
       ],
     },
@@ -467,10 +498,10 @@ export const translations: Record<Language, SiteTranslation> = {
       eyebrow: "Our team",
       title: "The people behind Derivo",
       description:
-        "Filip and Anton run Derivo AB together. Filip primarily leads assignments and delivers technical investigations, while Anton is responsible for business development and company structure.",
+        "Together, Filip and Anton run Derivo AB. Filip is primarily responsible for assignments and carries out technical investigations, while Anton is responsible for business development and company structure.",
       storyTitle: "Our story",
       storyText:
-        "Filip and Anton have known each other since childhood in Västerås. Growing up, we both had a clear ambition to one day build something of our own. When Filip later began working on water and stormwater projects, it quickly became clear how much difference strong decision support can make, but also how often the work gets stuck in routine: \"this is how we have always done it.\" Not because anyone wants to deliver poor results, but because time, processes and standard templates sometimes shape the outcome more than the needs of the site. At the same time, the pressure on projects increased: more requirements, greater climate impact and bigger consequences when the wrong decisions are made early.\n\nThe idea for Derivo took shape when Filip moved back to Västerås after his studies in Lund. We started sketching out how a smaller company could work differently: more methodically, more transparently and more focused on actually helping the client move forward, not just delivering a report.\n\nThat became the start of Derivo. We want every assignment to feel clear, well thought through and useful, and we want it to be easy for the client to understand what matters and why.",
+        "Filip and Anton have known each other since childhood in Västerås. Growing up, we both had a clear ambition to one day build something of our own. When Filip later began working on water and stormwater projects, it quickly became clear how much impact solid groundwork can have on decisions – but also how often the work gets stuck in routine: \"this is how we have always done it.\" Not because anyone wants to deliver poor results, but because time, processes and standard templates sometimes shape the outcome more than the needs of the site. At the same time, the pressure on projects increased: more requirements, greater climate impact and bigger consequences when the wrong decisions are made early.\n\nThe idea for Derivo took shape when Filip moved back to Västerås after his studies in Lund. We started sketching out how a smaller company could work differently: more methodically, more transparently and more focused on actually helping the client move forward – not just delivering a report.\n\nThat became the start of Derivo. We want every assignment to feel clear, well thought through and useful – and we want it to be easy for the client to understand what matters and why. Over time, it has become clear that land and water often need to be handled together, which is why we are building Derivo to take a coordinated approach when a project requires it.",
       linkedinComingSoon: "LinkedIn coming soon",
       members: [
         {
@@ -542,7 +573,7 @@ export const translations: Record<Language, SiteTranslation> = {
       eyebrow: "Contact us",
       title: "Let’s start a conversation",
       description:
-        "If you have questions, need support in a project or want to discuss a potential assignment, we would be glad to help.",
+         "Do you have questions, need support in a project or want to discuss a potential assignment? We are happy to help.",
       directTitle: "Contact us directly",
       directText:
         "Our team is ready to help with questions or inquiries. Whether you are looking for a consultation or already have a specific project in mind, we are here to help.",
@@ -580,6 +611,8 @@ export const translations: Record<Language, SiteTranslation> = {
         "Cloudburst analysis",
         "Pollution calculations",
         "Water infrastructure design",
+        "Geotechnics & ground investigations",
+        "Contaminated land",
       ],
     },
   },
