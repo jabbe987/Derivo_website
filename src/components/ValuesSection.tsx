@@ -5,7 +5,7 @@ const ValuesSection = ({ language }: { language: Language }) => {
   const { values } = translations[language];
 
   return (
-    <section id="values" className="py-24 bg-background">
+    <section id="values" className="scroll-mt-32 pt-24 pb-36 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">

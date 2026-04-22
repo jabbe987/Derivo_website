@@ -1,10 +1,17 @@
 import { Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/Logo.png";
 import type { Language } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
+import { getPagePath } from "@/lib/routes";
 
 const Footer = ({ language }: { language: Language }) => {
   const translation = translations[language];
+  const quickLinks = [
+    { label: translation.nav.homeLabel, to: getPagePath(language, "home") },
+    { label: translation.nav.aboutLabel, to: getPagePath(language, "about") },
+    { label: translation.nav.contactCta, to: getPagePath(language, "contact") },
+  ];
 
   return (
     <footer className="bg-[#256980] text-primary-foreground">
@@ -22,18 +29,16 @@ const Footer = ({ language }: { language: Language }) => {
           <div>
             <h4 className="font-serif font-semibold text-lg mb-6">{translation.footer.quickLinksTitle}</h4>
             <ul className="space-y-3">
-              {translation.nav.links
-                .concat([{ label: translation.nav.contactCta, href: "#contact" }])
-                .map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.to}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
-                ))}
+              ))}
             </ul>
           </div>
 

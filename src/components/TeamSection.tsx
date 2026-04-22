@@ -6,7 +6,7 @@ const TeamSection = ({ language }: { language: Language }) => {
   const { team } = translations[language];
 
   return (
-    <section id="team" className="py-24 bg-muted/30">
+    <section id="team" className="scroll-mt-32 py-24 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">

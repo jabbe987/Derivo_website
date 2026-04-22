@@ -5,14 +5,24 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/Logo.png";
 import { persistLanguagePreference, type Language } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
+import { getPagePath, type SitePage } from "@/lib/routes";
 
-const Header = ({ language }: { language: Language }) => {
+const Header = ({
+  language,
+  page,
+}: {
+  language: Language;
+  page: SitePage;
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const translation = translations[language];
   const alternateLanguage = language === "sv" ? "en" : "sv";
-  const alternatePath = `/${alternateLanguage}${location.hash}`;
+  const alternatePath = `${getPagePath(alternateLanguage, page)}${location.hash}`;
+  const homePath = getPagePath(language, "home");
+  const aboutPath = getPagePath(language, "about");
+  const contactPath = getPagePath(language, "contact");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +32,15 @@ const Header = ({ language }: { language: Language }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname, location.hash]);
+
+  const navLinkClass = (isActive: boolean) =>
+    `text-base font-medium transition-colors hover:text-accent ${
+      isScrolled ? "text-foreground" : "text-foreground/90"
+    } ${isActive ? "text-accent" : ""}`;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -30,28 +49,23 @@ const Header = ({ language }: { language: Language }) => {
           : "bg-white"
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="w-full px-6 lg:px-10 2xl:px-14">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to={`/${language}`} className="flex items-center">
-            <img src={logo} alt="Derivo logo" className="h-10 w-auto" />
+            <img src={logo} alt="Derivo logo" className="h-12 w-auto" />
           </Link>
           <div className="flex items-center gap-4">
-            <nav className="hidden md:flex items-center gap-8">
-              {translation.nav.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-accent ${
-                    isScrolled ? "text-foreground" : "text-foreground/90"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
+            <nav className="hidden md:flex items-center gap-10">
+              <Link to={homePath} className={navLinkClass(page === "home")}>
+                {translation.nav.homeLabel}
+              </Link>
+              <Link to={aboutPath} className={navLinkClass(page === "about")}>
+                {translation.nav.aboutLabel}
+              </Link>
               <Link
                 to={alternatePath}
-                className={`text-sm font-semibold transition-colors hover:text-accent ${
+                className={`text-base font-semibold transition-colors hover:text-accent ${
                   isScrolled ? "text-foreground" : "text-foreground/90"
                 }`}
                 aria-label={translation.nav.languageLabel}
@@ -60,7 +74,7 @@ const Header = ({ language }: { language: Language }) => {
                 {alternateLanguage.toUpperCase()}
               </Link>
               <Button variant="default" size="lg" asChild>
-                <a href="#contact">{translation.nav.contactCta}</a>
+                <Link to={contactPath}>{translation.nav.contactCta}</Link>
               </Button>
             </nav>
 
@@ -81,32 +95,35 @@ const Header = ({ language }: { language: Language }) => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/20 bg-card/95 backdrop-blur-md animate-fade-in">
+          <div className="md:hidden py-5 border-t border-border/20 bg-card/95 backdrop-blur-md animate-fade-in">
             <nav className="flex flex-col gap-4">
-              {translation.nav.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-foreground font-medium py-2 hover:text-accent transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+              <Link
+                to={homePath}
+                className={`text-lg font-medium py-2 hover:text-accent transition-colors ${
+                  page === "home" ? "text-accent" : "text-foreground"
+                }`}
+              >
+                {translation.nav.homeLabel}
+              </Link>
+              <Link
+                to={aboutPath}
+                className={`text-lg font-medium py-2 hover:text-accent transition-colors ${
+                  page === "about" ? "text-accent" : "text-foreground"
+                }`}
+              >
+                {translation.nav.aboutLabel}
+              </Link>
               <Link
                 to={alternatePath}
-                className="text-foreground font-medium py-2 hover:text-accent transition-colors"
+                className="text-lg text-foreground font-medium py-2 hover:text-accent transition-colors"
                 onClick={() => {
                   persistLanguagePreference(alternateLanguage);
-                  setIsMobileMenuOpen(false);
                 }}
               >
                 {translation.nav.languageLabel}: {alternateLanguage.toUpperCase()}
               </Link>
               <Button variant="default" size="lg" className="mt-2" asChild>
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  {translation.nav.contactCta}
-                </a>
+                <Link to={contactPath}>{translation.nav.contactCta}</Link>
               </Button>
             </nav>
           </div>

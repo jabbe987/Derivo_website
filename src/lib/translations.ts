@@ -9,7 +9,9 @@ export type SiteTranslation = {
     title: string;
   };
   nav: {
-    links: Array<{ label: string; href: string }>;
+    homeLabel: string;
+    aboutLabel: string;
+    servicesLabel: string;
     contactCta: string;
     openMenuLabel: string;
     languageLabel: string;
@@ -25,6 +27,7 @@ export type SiteTranslation = {
   about: {
     eyebrow: string;
     title: string;
+    partnersLabel: string;
     paragraphs: string[];
     quote: string;
   };
@@ -99,28 +102,15 @@ export type SiteTranslation = {
   };
 };
 
-const sectionLinks = {
-  about: "#about",
-  services: "#services",
-  values: "#values",
-  team: "#team",
-  culture: "#culture",
-  contact: "#contact",
-} as const;
-
 export const translations: Record<Language, SiteTranslation> = {
   sv: {
     meta: {
       title: "Derivo",
     },
     nav: {
-      links: [
-        { label: "Om oss", href: sectionLinks.about },
-        { label: "Tjänster", href: sectionLinks.services },
-        { label: "Värderingar", href: sectionLinks.values },
-        { label: "Team", href: sectionLinks.team },
-        { label: "Kultur", href: sectionLinks.culture },
-      ],
+      homeLabel: "Hem",
+      aboutLabel: "Om oss",
+      servicesLabel: "Tjänster",
       contactCta: "Kontakta oss",
       openMenuLabel: "Öppna meny",
       languageLabel: "Språk",
@@ -142,6 +132,7 @@ export const translations: Record<Language, SiteTranslation> = {
     about: {
       eyebrow: "Om Derivo",
       title: "Beslutsunderlag anpassade för dig och samhället",
+      partnersLabel: "Samarbeten",
       paragraphs: [
         "Derivo hjälper både offentliga och privata beställare med tekniska underlag inom mark och vatten, med särskild spets inom dagvatten, skyfall och hydraulisk modellering. Genom att samordna mark- och vattenfrågor tidigt i processen kan vi identifiera beroenden, minska risken för omtag och ta fram lösningar som tar hänsyn till fler faktorer och risker. Vi utgår från faktiska behov och lokala förutsättningar och kombinerar teknisk kompetens med förståelse för platsens sammanhang – med ambitionen att stärka kvalitet, tydlighet och trygghet i planering och genomförande.",
         "Som mindre konsultbolag kan vi arbeta nära beställaren och anpassa arbetssättet när förutsättningarna förändras. Vi eftersträvar väl avvägda vägval både ur ett ekonomiskt och tekniskt perspektiv med hänsyn till berörda intressen.",
@@ -366,13 +357,9 @@ export const translations: Record<Language, SiteTranslation> = {
       title: "Derivo",
     },
     nav: {
-      links: [
-        { label: "About", href: sectionLinks.about },
-        { label: "Services", href: sectionLinks.services },
-        { label: "Values", href: sectionLinks.values },
-        { label: "Team", href: sectionLinks.team },
-        { label: "Culture", href: sectionLinks.culture },
-      ],
+      homeLabel: "Home",
+      aboutLabel: "About us",
+      servicesLabel: "Services",
       contactCta: "Contact us",
       openMenuLabel: "Open menu",
       languageLabel: "Language",
@@ -394,6 +381,7 @@ export const translations: Record<Language, SiteTranslation> = {
     about: {
       eyebrow: "About Derivo",
       title: "Decision support shaped for you and for society",
+      partnersLabel: "Collaborations",
       paragraphs: [
         "Derivo supports both public and private clients with technical supporting material in land and water, with particular expertise in stormwater, cloudburst and hydraulic modelling. By coordinating land and water issues early in the process, we can identify dependencies, reduce the risk of rework and develop solutions that take more factors and risks into account. We start from actual needs and local conditions and combine technical expertise with an understanding of the site's context – with the ambition to strengthen quality, clarity and confidence in planning and implementation.",
 

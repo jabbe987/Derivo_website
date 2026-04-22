@@ -1,25 +1,33 @@
 import type { Language } from "@/lib/i18n";
+import starkstadLogo from "@/assets/Starkstad.jpeg";
+import vaVerktygetLogo from "@/assets/VA_Verktyget_Svart.jpeg";
 import { translations } from "@/lib/translations";
 
+const partnerLogos = [
+  {
+    src: starkstadLogo,
+    alt: "Starkstad logo",
+  },
+  {
+    src: vaVerktygetLogo,
+    alt: "VA Verktyget logo",
+  },
+] as const;
+
 const ServicesSection = ({ language }: { language: Language }) => {
-  const { services } = translations[language];
+  const { services, about } = translations[language];
+  const sectionTitle = language === "sv" ? "Våra tjänster" : "Our services";
 
   return (
-    <section id="services" className="py-24 bg-muted/30">
+    <section id="services" className="scroll-mt-32 pt-0 pb-24 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
-            {services.eyebrow}
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            {services.title}
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground">
+            {sectionTitle}
           </h2>
-          <p className="text-muted-foreground text-lg">
-            {services.description}
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-12">
           {services.items.map((service, index) => (
             <div
               key={service.title}
@@ -38,6 +46,29 @@ const ServicesSection = ({ language }: { language: Language }) => {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-40 max-w-3xl rounded-3xl border border-border/80 bg-card-gradient px-6 py-5 shadow-soft">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+              {about.partnersLabel}
+            </span>
+            <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-10">
+              {partnerLogos.map((logo) => (
+                <div
+                  key={logo.src}
+                  className="flex h-16 items-center md:h-20"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    loading="lazy"
+                    className="h-full w-auto max-w-full object-contain opacity-90 transition-opacity duration-200 hover:opacity-100"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
