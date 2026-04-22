@@ -1,6 +1,7 @@
 import type { Language } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
-import heroVideo from "@/assets/video/13725274_2048_1080_30fps.mp4";
+import heroVideo from "@/assets/video/dropsOnWood.mp4";
+import heroPoster from "@/assets/video/poster.png";
 import logo from "@/assets/Logo.png";
 
 const HeroSection = ({ language }: { language: Language }) => {
@@ -14,13 +15,15 @@ const HeroSection = ({ language }: { language: Language }) => {
         muted
         loop
         playsInline
+        preload="metadata"
+        poster={heroPoster}
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-primary/55" />
 
-      <div className="container mx-auto px-6 py-32 relative z-10">
+      <div className="container mx-auto px-6 pt-40 pb-24 relative z-10">
         <div className="mx-auto max-w-5xl text-center">
           <div className="animate-fade-up">
             <img
