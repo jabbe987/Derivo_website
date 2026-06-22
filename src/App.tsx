@@ -34,6 +34,17 @@ const LanguagePage = ({ language, page }: { language: Language; page: SitePage }
   }, [language]);
 
   useEffect(() => {
+    const scrollTarget = (location.state as { scrollTo?: string } | null)?.scrollTo;
+
+    if (scrollTarget) {
+      requestAnimationFrame(() => {
+        document
+          .getElementById(scrollTarget)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      return;
+    }
+
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
       if (element) {
@@ -44,7 +55,7 @@ const LanguagePage = ({ language, page }: { language: Language; page: SitePage }
     } else {
       window.scrollTo({ top: 0, behavior: "auto" });
     }
-  }, [location.hash, location.pathname]);
+  }, [location.hash, location.pathname, location.state]);
 
   return <PageComponent language={language} />;
 };

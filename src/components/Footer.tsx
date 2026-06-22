@@ -1,17 +1,33 @@
 import { Mail, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
-import logo from "@/assets/Logo.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from "@/assets/derivo-logo.svg";
 import type { Language } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 import { getPagePath } from "@/lib/routes";
 
 const Footer = ({ language }: { language: Language }) => {
   const translation = translations[language];
+  const location = useLocation();
+  const navigate = useNavigate();
+  const homePath = getPagePath(language, "home");
   const quickLinks = [
-    { label: translation.nav.homeLabel, to: getPagePath(language, "home") },
+    { label: translation.nav.homeLabel, to: homePath },
     { label: translation.nav.aboutLabel, to: getPagePath(language, "about") },
     { label: translation.nav.contactCta, to: getPagePath(language, "contact") },
   ];
+
+  const handleServicesClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    if (location.pathname === homePath) {
+      document
+        .getElementById("services")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    navigate(homePath, { state: { scrollTo: "services" } });
+  };
 
   return (
     <footer className="bg-[#256980] text-primary-foreground">
@@ -47,7 +63,13 @@ const Footer = ({ language }: { language: Language }) => {
             <ul className="space-y-3">
               {translation.footer.services.map((service) => (
                 <li key={service}>
-                  <span className="text-primary-foreground/70">{service}</span>
+                  <Link
+                    to={homePath}
+                    onClick={handleServicesClick}
+                    className="text-primary-foreground/70 hover:text-accent transition-colors"
+                  >
+                    {service}
+                  </Link>
                 </li>
               ))}
             </ul>

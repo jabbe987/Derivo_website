@@ -2,7 +2,7 @@ import type { Language } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 import heroVideo from "@/assets/video/dropsOnWood.mp4";
 import heroPoster from "@/assets/video/poster.png";
-import logo from "@/assets/Logo.png";
+import logo from "@/assets/derivo-logo.svg";
 
 const HeroSection = ({ language }: { language: Language }) => {
   const { hero } = translations[language];
