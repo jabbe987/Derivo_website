@@ -16,6 +16,26 @@ const Footer = ({ language }: { language: Language }) => {
     { label: translation.nav.contactCta, to: getPagePath(language, "contact") },
   ];
 
+  const handleQuickLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    destination: string,
+  ) => {
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    if (location.pathname === destination) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const handleServicesClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
 
@@ -49,6 +69,7 @@ const Footer = ({ language }: { language: Language }) => {
                 <li key={link.label}>
                   <Link
                     to={link.to}
+                    onClick={(event) => handleQuickLinkClick(event, link.to)}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {link.label}
