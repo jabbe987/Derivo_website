@@ -196,6 +196,18 @@ export const translations: Record<Language, SiteTranslation> = {
           description:
             "Stöd i riskbedömning och åtgärdsstrategi vid projekt där markföroreningar behöver utredas och hanteras.",
         },
+        {
+          icon: Target,
+          title: "Strategisk VA-planering",
+          description:
+            "Vi hjälper kommuner att planera långsiktigt för vatten och avlopp. Genom nulägesanalyser, strategiska utredningar och investeringsplanering tar vi fram underlag för prioriteringar och genomförande.",
+        },
+        {
+          icon: BookOpenCheck,
+          title: "Förnyelseplanering för VA",
+          description:
+            "Vi hjälper VA-verksamheter att bedöma förnyelsebehov och prioritera framtida investeringar. Vi sammanställer och analyserar befintliga underlag och tar fram förnyelseplaner med tydliga åtgärder, kompletteringsbehov och stöd för uppföljning.",
+        },
       ],
     },
     values: {
@@ -447,6 +459,18 @@ export const translations: Record<Language, SiteTranslation> = {
           title: "Contaminated land",
           description:
             "Support in risk assessment and remediation strategy for projects where soil contamination needs to be investigated and managed.",
+        },
+        {
+          icon: Target,
+          title: "Strategic water and wastewater planning",
+          description:
+            "We help municipalities plan for water and wastewater over the long term. Through assessments of current conditions, strategic studies and investment planning, we provide a basis for prioritisation and implementation.",
+        },
+        {
+          icon: BookOpenCheck,
+          title: "Water and wastewater renewal planning",
+          description:
+            "We help water and wastewater utilities assess renewal needs and prioritise future investments. We compile and analyse existing information and develop renewal plans with clear actions, identified information gaps and support for follow-up.",
         },
       ],
     },

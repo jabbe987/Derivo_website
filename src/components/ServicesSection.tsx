@@ -27,11 +27,12 @@ const ServicesSection = ({ language }: { language: Language }) => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-12">
+        <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-10 xl:gap-12">
           {services.items.map((service, index) => (
             <div
               key={service.title}
               className="group bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-accent/20"
+              // className="group min-w-0 bg-card rounded-2xl p-8 xl:p-6 shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-accent/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-water-gradient transition-all duration-300">
@@ -39,6 +40,7 @@ const ServicesSection = ({ language }: { language: Language }) => {
               </div>
 
               <h3 className="font-serif text-xl text-foreground font-semibold mb-3">
+              {/* <h3 className="font-serif text-xl text-foreground font-semibold mb-3 break-words"> */}
                 {service.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
