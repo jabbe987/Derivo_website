@@ -1,4 +1,4 @@
-import { BarChart3, BookOpenCheck, Brain, CloudRain, Clock, Database, Droplets, Eye, Filter, Handshake, Layers, Leaf, MessageCircle, Pickaxe, ScanSearch, Shield, Sprout, Target } from "lucide-react";
+import { BarChart3, BookOpenCheck, Brain, CloudRain, Clock, Droplets, Eye, Handshake, Layers, Leaf, MessageCircle, RefreshCw, Ruler, Shield, Sprout, Target, type LucideIcon } from "lucide-react";
 import filipProfil from "@/assets/filipProfil2.png";
 import antonProfil from "@/assets/antonProfil.png";
 import jakobProfil from "@/assets/jakobProfil.png";
@@ -35,7 +35,7 @@ export type SiteTranslation = {
     eyebrow: string;
     title: string;
     description: string;
-    items: Array<{ icon: typeof Droplets; title: string; description: string }>;
+    items: Array<{ icon: LucideIcon; title: string; description: string }>;
   };
   values: {
     eyebrow: string;
@@ -143,70 +143,46 @@ export const translations: Record<Language, SiteTranslation> = {
         '"Vi tar fram åtgärder och lösningar med syfte, för ett samhälle som planeras smartare, byggs tryggare och står starkare över tid."',
     },
     services: {
-      eyebrow: "Våra tjänster",
-      title: "Modellering, projektering och utredningar inom mark och vatten",
+      eyebrow: "Vårt erbjudande",
+      title: "Vårt erbjudande",
       description:
-        "Vi erbjuder ett brett spektrum av tekniska tjänster inom mark och vatten, alltid med fokus på praktisk nytta och hållbara lösningar.",
+        "Vi erbjuder utredning, planering och projektering inom vatten och mark. Vi kombinerar egen kompetens med erfarna specialister i vårt nätverk och samordnar arbetet utifrån uppdragets behov.",
       items: [
         {
           icon: Droplets,
           title: "Dagvattenutredningar",
           description:
-            "Omfattande utredningar för detaljplaner med fokus på fördröjning, rening och avledning av dagvatten.",
-        },
-        {
-          icon: BarChart3,
-          title: "Hydraulisk modellering",
-          description:
-            "Expertis inom kapacitetsanalyser för att simulera, förstå och optimera VA-system.",
+            "Vi utreder flöden, föroreningsbelastning och reningsbehov och föreslår lösningar för fördröjning, rening och avledning av dagvatten.",
         },
         {
           icon: CloudRain,
           title: "Skyfallsanalyser",
           description:
-            "Riskbedömningar och åtgärdsförslag för att hantera extrema nederbördshändelser och minska översvämningsrisker.",
+            "Vi kartlägger översvämningsrisker och analyserar åtgärder för att hantera skyfall och skapa säkra avrinningsvägar.",
         },
         {
-          icon: Filter,
-          title: "Föroreningsberäkningar",
+          icon: BarChart3,
+          title: "Hydraulisk modellering",
           description:
-            "Beräkningar för att bedöma föroreningsbelastning och utforma reningslösningar.",
+            "Vi modellerar flöden och vattennivåer för att bedöma kapacitet och jämföra åtgärder i VA-system och vid översvämningar.",
+        },
+        {
+          icon: RefreshCw,
+          title: "VA-planering och förnyelse",
+          description:
+            "Vi tar fram strategiska VA-utredningar och förnyelseplaner för ledningsnät och anläggningar som stöd för investeringar, åtgärdsprioriteringar och uppföljning.",
+        },
+        {
+          icon: Ruler,
+          title: "VA-projektering",
+          description:
+            "Vi projekterar och dimensionerar VA- och dagvattenlösningar med hänsyn till platsens förutsättningar, byggbarhet och framtida drift.",
         },
         {
           icon: Layers,
-          title: "VA-projektering",
+          title: "Geoteknik och förorenad mark",
           description:
-            "Teknisk projektering och dimensionering av VA- och dagvattenlösningar, från underlag och beräkningar till systemutformning.",
-        },
-        {
-          icon: Database,
-          title: "Systemlösningar",
-          description:
-            "Framtagning av helhetslösningar för dagvattenhantering anpassade efter platsens unika förutsättningar.",
-        },
-        {
-          icon: Pickaxe,
-          title: "Geoteknik & markundersökningar",
-          description:
-            "Underlag för grundläggning, stabilitet och markförhållanden – med tydlig koppling till utformning och genomförande i projekt.",
-        },
-        {
-          icon: ScanSearch,
-          title: "Förorenad mark",
-          description:
-            "Stöd i riskbedömning och åtgärdsstrategi vid projekt där markföroreningar behöver utredas och hanteras.",
-        },
-        {
-          icon: Target,
-          title: "Strategisk VA-planering",
-          description:
-            "Vi hjälper kommuner att planera långsiktigt för vatten och avlopp. Genom nulägesanalyser, strategiska utredningar och investeringsplanering tar vi fram underlag för prioriteringar och genomförande.",
-        },
-        {
-          icon: BookOpenCheck,
-          title: "Förnyelseplanering för VA",
-          description:
-            "Vi hjälper VA-verksamheter att bedöma förnyelsebehov och prioritera framtida investeringar. Vi sammanställer och analyserar befintliga underlag och tar fram förnyelseplaner med tydliga åtgärder, kompletteringsbehov och stöd för uppföljning.",
+            "Genom våra samarbetspartner erbjuder vi utredningar och specialiststöd inom markförhållanden, grundläggning och förorenad mark.",
         },
       ],
     },
@@ -407,70 +383,46 @@ export const translations: Record<Language, SiteTranslation> = {
         '"We develop actions and solutions with purpose, for communities that are planned more intelligently, built more safely and remain resilient over time."',
     },
     services: {
-      eyebrow: "Our services",
-      title: "Modelling, design and investigations within land and water",
+      eyebrow: "Our offering",
+      title: "Our offering",
       description:
-        "We offer a broad range of technical services within land and water, always with a focus on practical value and sustainable solutions.",
+        "We offer investigations, planning and design in water and land. We combine our own expertise with experienced specialists in our network and coordinate the work to meet the needs of each assignment.",
       items: [
         {
           icon: Droplets,
           title: "Stormwater investigations",
           description:
-            "Comprehensive investigations for detailed development plans with focus on retention, treatment and discharge of stormwater.",
-        },
-        {
-          icon: BarChart3,
-          title: "Hydraulic modelling",
-          description:
-            "Expertise in capacity analyses to simulate, understand and optimize water infrastructure systems.",
+            "We investigate flows, pollutant loads and treatment needs and propose solutions for stormwater retention, treatment and discharge.",
         },
         {
           icon: CloudRain,
           title: "Cloudburst analysis",
           description:
-            "Risk assessments and proposed measures to manage extreme rainfall events and reduce flood risks.",
+            "We map flood risks and analyse measures to manage cloudbursts and create safe overland flow paths.",
         },
         {
-          icon: Filter,
-          title: "Pollution calculations",
+          icon: BarChart3,
+          title: "Hydraulic modelling",
           description:
-            "Calculations to assess pollutant loads and design treatment solutions.",
+            "We model flows and water levels to assess capacity and compare measures in water and wastewater systems and in flood situations.",
+        },
+        {
+          icon: RefreshCw,
+          title: "Water and wastewater planning and renewal",
+          description:
+            "We develop strategic water and wastewater studies and renewal plans for pipe networks and facilities to support investment, prioritisation of measures and follow-up.",
+        },
+        {
+          icon: Ruler,
+          title: "Water and wastewater design",
+          description:
+            "We design and size water, wastewater and stormwater solutions with consideration for site conditions, buildability and future operation.",
         },
         {
           icon: Layers,
-          title: "Water and wastewater design",
+          title: "Geotechnics and contaminated land",
           description:
-            "Technical design and sizing of water and stormwater solutions, from calculations and supporting material to system layout.",
-        },
-        {
-          icon: Database,
-          title: "System solutions",
-          description:
-            "Integrated stormwater management concepts tailored to the unique conditions of each site.",
-        },
-        {
-          icon: Pickaxe,
-          title: "Geotechnics & ground investigations",
-          description:
-            "Supporting material for foundations, stability and ground conditions, with a clear link to project design and execution.",
-        },
-        {
-          icon: ScanSearch,
-          title: "Contaminated land",
-          description:
-            "Support in risk assessment and remediation strategy for projects where soil contamination needs to be investigated and managed.",
-        },
-        {
-          icon: Target,
-          title: "Strategic water and wastewater planning",
-          description:
-            "We help municipalities plan for water and wastewater over the long term. Through assessments of current conditions, strategic studies and investment planning, we provide a basis for prioritisation and implementation.",
-        },
-        {
-          icon: BookOpenCheck,
-          title: "Water and wastewater renewal planning",
-          description:
-            "We help water and wastewater utilities assess renewal needs and prioritise future investments. We compile and analyse existing information and develop renewal plans with clear actions, identified information gaps and support for follow-up.",
+            "Through our partners, we offer investigations and specialist support in ground conditions, foundations and contaminated land.",
         },
       ],
     },
