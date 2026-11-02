@@ -6,68 +6,100 @@ import { translations } from "@/lib/translations";
 const partnerLogos = [
   {
     src: starkstadLogo,
-    alt: "Starkstad logo",
+    alt: "Starkstad",
+    width: 1265,
+    height: 296,
+    className: "w-4/5 max-w-[180px]",
   },
   {
     src: vaVerktygetLogo,
-    alt: "VA Verktyget logo",
+    alt: "VA Verktyget",
+    width: 1600,
+    height: 460,
+    className: "w-full max-w-[240px]",
   },
 ] as const;
 
 const ServicesSection = ({ language }: { language: Language }) => {
   const { services, about } = translations[language];
-  const sectionTitle = language === "sv" ? "Våra tjänster" : "Our services";
 
   return (
-    <section id="services" className="scroll-mt-32 pt-0 pb-24 bg-muted/30">
+    <section
+      id="services"
+      aria-labelledby="services-title"
+      className="scroll-mt-32 bg-muted/30 pb-20 pt-0 md:pb-24"
+    >
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground">
-            {sectionTitle}
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-12">
-          {services.items.map((service, index) => (
-            <div
-              key={service.title}
-              className="group bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-accent/20"
-              style={{ animationDelay: `${index * 0.1}s` }}
+        <div className="mx-auto max-w-[1200px]">
+          <div className="mb-12 max-w-3xl md:mb-16">
+            <h2
+              id="services-title"
+              className="mb-6 font-sans text-[32px] font-semibold leading-tight tracking-tight text-primary lg:text-5xl"
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-water-gradient transition-all duration-300">
-                <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
-              </div>
+              {services.title}
+            </h2>
+            <p className="text-lg leading-relaxed text-foreground/85">
+              {services.description}
+            </p>
+          </div>
 
-              <h3 className="font-serif text-xl text-foreground font-semibold mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
-        </div>
+          <ul
+            role="list"
+            className="grid list-none gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {services.items.map((service) => (
+              <li
+                key={service.title}
+                className="min-w-0 rounded-2xl border border-border bg-card p-6 shadow-soft lg:p-8"
+              >
+                <service.icon
+                  aria-hidden="true"
+                  strokeWidth={1.5}
+                  className="mb-6 h-7 w-7 text-primary"
+                />
+                <h3 className="mb-4 font-sans text-[22px] font-semibold leading-snug tracking-tight text-primary">
+                  {service.title}
+                </h3>
+                <p className="text-lg leading-relaxed text-foreground/85">
+                  {service.description}
+                </p>
+              </li>
+            ))}
+          </ul>
 
-        <div className="mx-auto mt-40 max-w-3xl rounded-3xl border border-border/80 bg-card-gradient px-6 py-5 shadow-soft">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+          <div
+            role="group"
+            aria-labelledby="services-partners-title"
+            className="mx-auto mt-14 grid w-full max-w-3xl gap-6 rounded-2xl border border-border bg-card p-6 sm:gap-8 sm:p-8"
+          >
+            <h3
+              id="services-partners-title"
+              className="text-center font-sans text-2xl font-semibold tracking-tight text-primary"
+            >
               {about.partnersLabel}
-            </span>
-            <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-10">
-              {partnerLogos.map((logo) => (
-                <div
+            </h3>
+            <ul
+              role="list"
+              className="mx-auto grid w-full min-w-0 max-w-[720px] list-none grid-cols-2"
+            >
+              {partnerLogos.map((logo, index) => (
+                <li
                   key={logo.src}
-                  className="flex h-16 items-center md:h-20"
+                  className={`flex min-h-[88px] min-w-0 items-center justify-center px-3 sm:min-h-[104px] sm:px-6 ${
+                    index > 0 ? "border-l border-border" : ""
+                  }`}
                 >
                   <img
                     src={logo.src}
                     alt={logo.alt}
+                    width={logo.width}
+                    height={logo.height}
                     loading="lazy"
-                    className="h-full w-auto max-w-full object-contain opacity-90 transition-opacity duration-200 hover:opacity-100"
+                    className={`h-auto object-contain ${logo.className}`}
                   />
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
